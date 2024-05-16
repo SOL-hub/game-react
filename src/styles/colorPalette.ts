@@ -2,14 +2,17 @@ import { css } from '@emotion/react';
 
 export const colorPalette = css`
   :root {
+    --redSalon50: #fff3f3;
     --redSalon300: #f98686;
     --redSalon400: #f56060;
     --redSalon500: #fb4846;
     --redSalon600: #d83f3e;
     --redSalon700: #b83130;
     --redSalon800: #961d1c;
-    --blackSalon0: #ffffff;
-    --blackSalon50: #faf8f8;
+
+    --whiteSalon0: #ffffff;
+    --whiteSalon50: #faf8f8;
+
     --blackSalon100: #e8e8e8;
     --blackSalon200: #c4c4c4;
     --blackSalon300: #878585;
@@ -24,14 +27,15 @@ export const colorPalette = css`
 `;
 
 export const colors = {
+  redSalon50: 'var(--redSalon50)',
   redSalon300: 'var(--redSalon300)',
   redSalon400: 'var(--redSalon400)',
   redSalon500: 'var(--redSalon500)',
   redSalon600: 'var(--redSalon600)',
   redSalon700: 'var(--redSalon700)',
   redSalon800: 'var(--redSalon800)',
-  blackSalon0: 'var(--blackSalon0)',
-  blackSalon50: 'var(--blackSalon50)',
+  whiteSalon0: 'var(--whiteSalon0)',
+  whiteSalon50: 'var(--whiteSalon50)',
   blackSalon100: 'var(--blackSalon100)',
   blackSalon200: 'var(--blackSalon200)',
   blackSalon300: 'var(--blackSalon300)',
