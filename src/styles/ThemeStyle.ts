@@ -1,10 +1,10 @@
 const mediaSize = {
-  Desktop: '(max-width: 1240px)',
-  Tablet: '(max-width: 768px)',
-  Mobile: '(max-width: 414px)',
+  Desktop: '(min-width: 1240px)',
+  Tablet: '(min-width: 768px)',
+  Mobile: '(min-width: 414px)',
 };
 
-const color = {
+export const color = {
   redSalon50: '#FFF3F3',
   redSalon100: '#FFD4D4',
   redSalon200: '#FAABAB',
@@ -24,6 +24,8 @@ const color = {
   blackSalon600: '#1B1717',
   error50: '#FFF7EF',
   error500: '#F0790B',
+  subBlue50: '#F1F3FF',
+  subBlue400: '#5166D3',
 };
 
 const ThemeStyle = { mediaSize, color };
