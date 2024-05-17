@@ -7,16 +7,23 @@ import BSButton from '../components/common/BSButton';
 import BSInput from '../components/common/BSInput';
 import BSTextField from '../components/common/BSTextField';
 import BSAlert from '../components/common/BSAlert';
+import BSTop from '../components/common/BSTop';
+import { getCards } from '../remote/card';
+import { useEffect } from 'react';
 
 const containerStyles = css`
   background-color: pink;
 `;
 
 const Home = () => {
+  useEffect(() => {
+    getCards();
+  }, []);
   return (
     <DefaultLayout>
       <HeaderWithTitle title="해더" />
       <MainLayout background="redSalon50">
+        <BSTop title="test" subTitle="testtest" />
         버튼 컴포넌트
         {['main', 'soft', 'outlineRed', 'outlineGray', 'text'].map((mode, idx) => (
           <Row margin="2rem 0" key={idx}>
