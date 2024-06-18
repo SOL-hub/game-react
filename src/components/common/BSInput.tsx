@@ -18,7 +18,7 @@ const BSInput = styled.input`
   }
 
   &[aria-invalid='true'] {
-    border-color: ${colors.blackSalon600};
+    border-color: ${colors.error500};
   }
 `;
 

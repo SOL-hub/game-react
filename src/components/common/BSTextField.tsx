@@ -15,7 +15,7 @@ const BSTextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextFi
 ) {
   const [focused, setFocused] = useState(false);
 
-  const labelColor = hasError ? 'redSalon300' : focused ? 'blackSalon100' : undefined;
+  const labelColor = hasError ? 'error50' : focused ? 'blackSalon100' : undefined;
 
   const handleFocus: FocusEventHandler<HTMLInputElement> = (event) => {
     setFocused(true);

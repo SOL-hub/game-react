@@ -10,11 +10,14 @@ import BSAlert from '../components/common/BSAlert';
 import BSTop from '../components/common/BSTop';
 import { getCards } from '../remote/card';
 import { useEffect } from 'react';
+import { useAlertContext } from '@/components/contexts/AlertContext';
 const containerStyles = css`
   background-color: pink;
 `;
 
 const Home = () => {
+  const { open } = useAlertContext();
+
   useEffect(() => {
     getCards();
   }, []);
@@ -37,7 +40,15 @@ const Home = () => {
             </SmallButton>
           </Row>
         ))}
-        <BSButton full={true}>test</BSButton>
+        <BSButton color="success">emotion으로 만든 버튼</BSButton>
+        <BSButton color="error">emotion으로 만든 버튼</BSButton>
+        <BSButton color="success" weak={true}>
+          emotion으로 만든 버튼
+        </BSButton>
+        <BSButton color="error" weak={true}>
+          emotion으로 만든 버튼
+        </BSButton>
+        <BSButton full={true}>emotion으로 만든 버튼</BSButton>
         <div css={containerStyles}>test</div>
         Text 컴포넌트
         <BSText typography="HeadRegular20" display="block" color="redSalon300">
@@ -63,7 +74,21 @@ const Home = () => {
         <BSTextField label="비밀번호" hasError={true} />
       </MainLayout>
 
-      {/* <BSAlert isOpen={true} content="test" title="testtest" onBtnClick={() => {}} /> */}
+      {/* <BSAlert
+        isOpen={true}
+        description="안녕하세요"
+        content="test"
+        title="testtest"
+        onBtnClick={() => {}}
+      /> */}
+
+      <BSButton
+        onClick={() => {
+          open({ title: '카드신청완료', description: '확인해주세요.', onBtnClick: () => {} });
+        }}
+      >
+        Alert 열림
+      </BSButton>
     </DefaultLayout>
   );
 };

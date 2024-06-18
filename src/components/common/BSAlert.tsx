@@ -10,12 +10,20 @@ import BSButton from './BSButton';
 interface AlertProps {
   isOpen?: boolean;
   title: React.ReactNode;
+  description?: React.ReactNode;
   content?: React.ReactNode;
   buttonLabel?: string;
   onBtnClick: () => void;
 }
 
-function BSAlert({ isOpen, title, content, buttonLabel = '확인', onBtnClick }: AlertProps) {
+function BSAlert({
+  isOpen,
+  title,
+  content,
+  description,
+  buttonLabel = '확인',
+  onBtnClick,
+}: AlertProps) {
   if (isOpen === false) {
     return null;
   }
@@ -32,15 +40,13 @@ function BSAlert({ isOpen, title, content, buttonLabel = '확인', onBtnClick }:
         >
           {title}
         </BSText>
+        {description ? <BSText typography="CaptionRegular12">{description}</BSText> : null}
         {content ? (
           <BSText typography="CaptionBold12" color="blackSalon400">
             {content}
           </BSText>
         ) : null}
         <BSFlex justify="flex-end">
-          <BSButton onClick={onBtnClick} weak={true} style={{ marginTop: 12, border: 'none' }}>
-            {buttonLabel}
-          </BSButton>
           <BSButton onClick={onBtnClick} weak={true} style={{ marginTop: 12, border: 'none' }}>
             {buttonLabel}
           </BSButton>
@@ -55,7 +61,7 @@ const AlertContainer = styled.div`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: ${colors.redSalon600};
+  background-color: ${colors.whiteSalon0};
   border-radius: 8px;
   overflow: hidden;
   z-index: var(--alert-zindex);

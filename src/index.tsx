@@ -8,6 +8,8 @@ import ThemeStyle from './styles/ThemeStyle';
 import { Global } from '@emotion/react';
 import globalStyles from './styles/globalStyles';
 
+import { AlertContextProvider } from './components/contexts/AlertContext';
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
@@ -15,7 +17,9 @@ root.render(
       <GlobalStyle />
       <Global styles={globalStyles} />
       <ThemeProvider theme={ThemeStyle}>
-        <App />
+        <AlertContextProvider>
+          <App />
+        </AlertContextProvider>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,

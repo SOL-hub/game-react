@@ -38,7 +38,17 @@ export default css`
   }
 
   button {
-    cursor: pointer;
+    width: auto;
+    overflow: visible;
+
+    margin: 0;
+    padding: 0;
+
     border: none;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    cursor: pointer;
   }
 `;
