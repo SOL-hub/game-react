@@ -31,10 +31,10 @@ export const LargeButton = styled.button<ButtonStyle>`
       ? props.theme.color.redSalon500
       : props.mode === SOFT
       ? props.theme.color.redSalon50
-      : props.theme.color.blackSalon0};
+      : props.theme.color.blackSalon100};
   color: ${(props) =>
     props.mode === MAIN
-      ? props.theme.color.blackSalon0
+      ? props.theme.color.blackSalon100
       : [OUTLINE_GRAY, TEXT].includes(props.mode)
       ? props.theme.color.blackSalon600
       : props.theme.color.redSalon500};
@@ -45,7 +45,9 @@ export const LargeButton = styled.button<ButtonStyle>`
 
   &:disabled {
     background: ${(props) =>
-      props.mode === OUTLINE_GRAY ? props.theme.color.blackSalon0 : props.theme.color.blackSalon50};
+      props.mode === OUTLINE_GRAY
+        ? props.theme.color.blackSalon100
+        : props.theme.color.blackSalon50};
     border: ${(props) =>
       [OUTLINE_GRAY, OUTLINE_RED].includes(props.mode)
         ? `1px solid ${props.theme.color.blackSalon200}`
