@@ -30,7 +30,12 @@ const BSTextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextFi
   return (
     <div>
       {label ? (
-        <Text typography="t7" color={labelColor} display="inline-block" style={{ marginBottom: 6 }}>
+        <Text
+          typography="CaptionBold12"
+          color={labelColor}
+          display="inline-block"
+          style={{ marginBottom: 6 }}
+        >
           {label}
         </Text>
       ) : null}
@@ -45,7 +50,7 @@ const BSTextField = forwardRef<HTMLInputElement, TextFieldProps>(function TextFi
 
       {helpMessage ? (
         <Text
-          typography="t7"
+          typography="CaptionBold12"
           color={labelColor}
           display="inline-block"
           style={{ marginTop: 6, fontSize: 12 }}

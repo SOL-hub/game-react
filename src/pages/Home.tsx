@@ -10,7 +10,6 @@ import BSAlert from '../components/common/BSAlert';
 import BSTop from '../components/common/BSTop';
 import { getCards } from '../remote/card';
 import { useEffect } from 'react';
-
 const containerStyles = css`
   background-color: pink;
 `;
@@ -41,8 +40,8 @@ const Home = () => {
         <BSButton full={true}>test</BSButton>
         <div css={containerStyles}>test</div>
         Text 컴포넌트
-        <BSText typography="t2" display="block">
-          테스트테스트
+        <BSText typography="HeadRegular20" display="block" color="redSalon300">
+          테스트테스트여기올시다
         </BSText>
         버튼 컴포넌트 Disabled
         {['main', 'soft', 'outlineRed', 'outlineGray', 'text'].map((mode, idx) => (

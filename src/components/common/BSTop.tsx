@@ -11,10 +11,10 @@ interface TopProps {
 function Top({ title, subTitle }: TopProps) {
   return (
     <Flex direction="column" css={containerStyles}>
-      <Text bold={true} typography="t4">
+      <Text bold={true} typography="CaptionBold12">
         {title}
       </Text>
-      <Text typography="t7">{subTitle}</Text>
+      <Text typography="CaptionBold12">{subTitle}</Text>
     </Flex>
   );
 }

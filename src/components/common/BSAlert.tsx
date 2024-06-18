@@ -25,7 +25,7 @@ function BSAlert({ isOpen, title, content, buttonLabel = '확인', onBtnClick }:
       <AlertContainer>
         <BSText
           color="blackSalon500"
-          typography="t4"
+          typography="HeadBold18"
           bold={true}
           display="block"
           style={{ marginBottom: 6 }}
@@ -33,7 +33,7 @@ function BSAlert({ isOpen, title, content, buttonLabel = '확인', onBtnClick }:
           {title}
         </BSText>
         {content ? (
-          <BSText typography="t7" color="blackSalon400">
+          <BSText typography="CaptionBold12" color="blackSalon400">
             {content}
           </BSText>
         ) : null}

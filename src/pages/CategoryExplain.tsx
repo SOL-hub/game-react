@@ -62,10 +62,10 @@ const CategoryExplain = () => {
     <Container>
       {CategoryList.map((game) => (
         <Wrap key={game.id}>
-          <BSText typography="regular20" color="blackSalon600">
+          <BSText typography="HeadRegular20" color="blackSalon600">
             {game.title}
           </BSText>
-          <BSText typography="regular15" color="blackSalon400">
+          <BSText typography="TextRegular16" color="blackSalon400">
             {game.subTitle}
           </BSText>
           <img src="" alt="arrow-icon" onClick={handleToggleclick} />

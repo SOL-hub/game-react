@@ -19,7 +19,7 @@ const BSText = styled.span<BSTextProps>(
     textAlign,
     fontWeight: bold ? 'bold' : fontWeight,
   }),
-  ({ typography = 't5' }) => typographyMap[typography],
+  ({ typography = 'TextRegular16' }) => typographyMap[typography],
 );
 
 export default BSText;
