@@ -22,74 +22,77 @@ const Home = () => {
     getCards();
   }, []);
   return (
-    <DefaultLayout>
-      <HeaderWithTitle title="해더" />
-      <MainLayout background="redSalon50">
-        <BSTop title="test" subTitle="testtest" />
-        버튼 컴포넌트
-        {['main', 'soft', 'outlineRed', 'outlineGray', 'text'].map((mode, idx) => (
-          <Row margin="2rem 0" key={idx}>
-            <LargeButton mode={mode} margin="0.5rem">
-              Large {mode}
-            </LargeButton>
-            <MediumButton mode={mode} margin="0.5rem">
-              Medium {mode}
-            </MediumButton>
-            <SmallButton mode={mode} margin="0.5rem">
-              Small {mode}
-            </SmallButton>
-          </Row>
-        ))}
-        <BSButton color="success">emotion으로 만든 버튼</BSButton>
-        <BSButton color="error">emotion으로 만든 버튼</BSButton>
-        <BSButton color="success" weak={true}>
-          emotion으로 만든 버튼
-        </BSButton>
-        <BSButton color="error" weak={true}>
-          emotion으로 만든 버튼
-        </BSButton>
-        <BSButton full={true}>emotion으로 만든 버튼</BSButton>
-        <div css={containerStyles}>test</div>
-        Text 컴포넌트
-        <BSText typography="HeadRegular20" display="block" color="redSalon300">
-          테스트테스트여기올시다
-        </BSText>
-        버튼 컴포넌트 Disabled
-        {['main', 'soft', 'outlineRed', 'outlineGray', 'text'].map((mode, idx) => (
-          <Row margin="2rem 0" key={idx}>
-            <LargeButton mode={mode} margin="0.5rem" disabled>
-              Large {mode}
-            </LargeButton>
-            <MediumButton mode={mode} margin="0.5rem" disabled>
-              Medium {mode}
-            </MediumButton>
-            <SmallButton mode={mode} margin="0.5rem" disabled>
-              Small {mode}
-            </SmallButton>
-          </Row>
-        ))}
-        <BSInput placeholder="test" aria-invalid={true} />
-        <BSInput placeholder="test" aria-invalid={false} />
-        <BSTextField label="아이디" />
-        <BSTextField label="비밀번호" hasError={true} />
-      </MainLayout>
+    <div>
+      <BSTop title="보드게임 판매" subTitle="어떤 게임이 있나 확인해볼까요?" />
+    </div>
+    // <DefaultLayout>
+    //   <HeaderWithTitle title="해더" />
+    //   <MainLayout background="redSalon50">
+    //     <BSTop title="test" subTitle="testtest" />
+    //     버튼 컴포넌트
+    //     {['main', 'soft', 'outlineRed', 'outlineGray', 'text'].map((mode, idx) => (
+    //       <Row margin="2rem 0" key={idx}>
+    //         <LargeButton mode={mode} margin="0.5rem">
+    //           Large {mode}
+    //         </LargeButton>
+    //         <MediumButton mode={mode} margin="0.5rem">
+    //           Medium {mode}
+    //         </MediumButton>
+    //         <SmallButton mode={mode} margin="0.5rem">
+    //           Small {mode}
+    //         </SmallButton>
+    //       </Row>
+    //     ))}
+    //     <BSButton color="success">emotion으로 만든 버튼</BSButton>
+    //     <BSButton color="error">emotion으로 만든 버튼</BSButton>
+    //     <BSButton color="success" weak={true}>
+    //       emotion으로 만든 버튼
+    //     </BSButton>
+    //     <BSButton color="error" weak={true}>
+    //       emotion으로 만든 버튼
+    //     </BSButton>
+    //     <BSButton full={true}>emotion으로 만든 버튼</BSButton>
+    //     <div css={containerStyles}>test</div>
+    //     Text 컴포넌트
+    //     <BSText typography="HeadRegular20" display="block" color="redSalon300">
+    //       테스트테스트여기올시다
+    //     </BSText>
+    //     버튼 컴포넌트 Disabled
+    //     {['main', 'soft', 'outlineRed', 'outlineGray', 'text'].map((mode, idx) => (
+    //       <Row margin="2rem 0" key={idx}>
+    //         <LargeButton mode={mode} margin="0.5rem" disabled>
+    //           Large {mode}
+    //         </LargeButton>
+    //         <MediumButton mode={mode} margin="0.5rem" disabled>
+    //           Medium {mode}
+    //         </MediumButton>
+    //         <SmallButton mode={mode} margin="0.5rem" disabled>
+    //           Small {mode}
+    //         </SmallButton>
+    //       </Row>
+    //     ))}
+    //     <BSInput placeholder="test" aria-invalid={true} />
+    //     <BSInput placeholder="test" aria-invalid={false} />
+    //     <BSTextField label="아이디" />
+    //     <BSTextField label="비밀번호" hasError={true} />
+    //   </MainLayout>
 
-      {/* <BSAlert
-        isOpen={true}
-        description="안녕하세요"
-        content="test"
-        title="testtest"
-        onBtnClick={() => {}}
-      /> */}
+    //   {/* <BSAlert
+    //     isOpen={true}
+    //     description="안녕하세요"
+    //     content="test"
+    //     title="testtest"
+    //     onBtnClick={() => {}}
+    //   /> */}
 
-      <BSButton
-        onClick={() => {
-          open({ title: '카드신청완료', description: '확인해주세요.', onBtnClick: () => {} });
-        }}
-      >
-        Alert 열림
-      </BSButton>
-    </DefaultLayout>
+    //   <BSButton
+    //     onClick={() => {
+    //       open({ title: '카드신청완료', description: '확인해주세요.', onBtnClick: () => {} });
+    //     }}
+    //   >
+    //     Alert 열림
+    //   </BSButton>
+    // </DefaultLayout>
   );
 };
 
