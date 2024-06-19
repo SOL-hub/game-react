@@ -3,10 +3,18 @@ import { Link, useLocation } from 'react-router-dom';
 import BSButton from './BSButton';
 import BSFlex from './BSFlex';
 import { colors } from '@/styles/colorPalette';
+// import { userAtom } from '@/atoms/user';
+// import { useRecoilValue } from 'recoil';
+import useUser from '@/hooks/auth/useUser';
 
 function Navbar() {
   const location = useLocation();
   const showSignButton = ['/signup', '/signin'].includes(location.pathname) === false;
+
+  // const user = useRecoilValue(userAtom);
+  const user = useUser();
+
+  console.log(user);
 
   return (
     <BSFlex justify="space-between" align="center" css={navbarContainerStyles}>

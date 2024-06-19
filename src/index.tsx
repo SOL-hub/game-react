@@ -11,6 +11,7 @@ import globalStyles from './styles/globalStyles';
 
 import AuthGuard from './components/auth/AuthGuard';
 import { AlertContextProvider } from './components/contexts/AlertContext';
+import { RecoilRoot } from 'recoil';
 
 const client = new QueryClient({
   defaultOptions: {},
@@ -20,17 +21,19 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <QueryClientProvider client={client}>
-        <GlobalStyle />
-        <Global styles={globalStyles} />
-        <ThemeProvider theme={ThemeStyle}>
-          <AlertContextProvider>
-            <AuthGuard>
-              <App />
-            </AuthGuard>
-          </AlertContextProvider>
-        </ThemeProvider>
-      </QueryClientProvider>
+      <RecoilRoot>
+        <QueryClientProvider client={client}>
+          <GlobalStyle />
+          <Global styles={globalStyles} />
+          <ThemeProvider theme={ThemeStyle}>
+            <AlertContextProvider>
+              <AuthGuard>
+                <App />
+              </AuthGuard>
+            </AlertContextProvider>
+          </ThemeProvider>
+        </QueryClientProvider>
+      </RecoilRoot>
     </BrowserRouter>
   </React.StrictMode>,
 );
