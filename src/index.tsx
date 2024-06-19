@@ -9,6 +9,7 @@ import ThemeStyle from './styles/ThemeStyle';
 import { Global } from '@emotion/react';
 import globalStyles from './styles/globalStyles';
 
+import AuthGuard from './components/auth/AuthGuard';
 import { AlertContextProvider } from './components/contexts/AlertContext';
 
 const client = new QueryClient({
@@ -24,7 +25,9 @@ root.render(
         <Global styles={globalStyles} />
         <ThemeProvider theme={ThemeStyle}>
           <AlertContextProvider>
-            <App />
+            <AuthGuard>
+              <App />
+            </AuthGuard>
           </AlertContextProvider>
         </ThemeProvider>
       </QueryClientProvider>

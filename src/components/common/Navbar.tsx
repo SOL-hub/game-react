@@ -11,9 +11,8 @@ function Navbar() {
   return (
     <BSFlex justify="space-between" align="center" css={navbarContainerStyles}>
       <Link to="/">홈</Link>
-      <Link to="/signp"></Link>
       {showSignButton ? (
-        <Link to="/signup">
+        <Link to="/signin">
           <BSButton>로그인/회원가입</BSButton>
         </Link>
       ) : null}
