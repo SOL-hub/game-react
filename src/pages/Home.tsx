@@ -11,6 +11,7 @@ import BSTop from '../components/common/BSTop';
 import { getCards } from '../remote/card';
 import { useEffect } from 'react';
 import { useAlertContext } from '@/components/contexts/AlertContext';
+import Navbar from '@/components/common/Navbar';
 const containerStyles = css`
   background-color: pink;
 `;
@@ -23,6 +24,8 @@ const Home = () => {
   }, []);
   return (
     <div>
+      <Navbar />
+
       <BSTop title="보드게임 판매" subTitle="어떤 게임이 있나 확인해볼까요?" />
     </div>
     // <DefaultLayout>
