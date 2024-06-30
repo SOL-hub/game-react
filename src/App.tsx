@@ -1,16 +1,18 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
+import Test from './pages/Test';
 import * as PATH from './utils/path';
 import { css } from '@emotion/react';
 import styled from 'styled-components';
+import CategoryExplain from './pages/CategoryExplain';
 
 function App() {
-  console.log(process.env);
-
   return (
     <div>
       <Routes>
         <Route path={PATH.HOME} element={<Home />} />
+        <Route path={PATH.TEST} element={<Test />} />
+        <Route path={PATH.CATEGORYEXPLAIN} element={<CategoryExplain />} />
       </Routes>
     </div>
   );
