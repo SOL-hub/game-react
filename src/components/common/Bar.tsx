@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Row } from './Layout';
 import { ICON_TYPE, IconButton } from './Icon';
+import { TextBold16 } from './Typo';
 
 type BarProps = {
   title?: string;
@@ -9,6 +10,7 @@ type BarProps = {
   children?: React.ReactNode;
   colorBack?: string;
   colorFavorites?: string;
+  colorTitle?: string;
   isFavorites?: boolean;
   onClick?: () => void;
 };
@@ -23,10 +25,23 @@ export const HeaderWithTitle = ({ title }: BarProps) => {
   );
 };
 
-export const HeaderWithIconTitle = ({ title, icon, onClick, children }: BarProps) => {
+export const BarBackWithTitle = ({
+  colorBack = 'redSalon500',
+  colorTitle = 'blackSalon500',
+  title,
+}: BarProps) => {
   return (
     <Header>
-      <Row justifyContent="center"></Row>
+      <Row alignItems="center" padding="1.125rem 1rem">
+        <IconButton
+          iconName={ICON_TYPE.arrowV1Left}
+          color={colorBack}
+          onClick={() => window.history.back()}
+        />
+        <TextBold16 margin="3px 0 0 1rem" color={colorTitle}>
+          {title}
+        </TextBold16>
+      </Row>
     </Header>
   );
 };
