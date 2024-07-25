@@ -41,6 +41,7 @@ export const Layout = styled(DefaultLayout)<LayoutStyle>`
 `;
 
 export const Flex = styled.div<LayoutStyle>`
+  {...style}
   display: flex;
   flex: ${(props) => props.flex};
   flex-direction: ${(props) => props.flexDirection};

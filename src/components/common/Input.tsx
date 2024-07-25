@@ -1,12 +1,20 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Flex } from 'components/common/Layout';
 import { Icon, ICON_TYPE } from 'components/common/Icon';
 import { CaptionRegular12 } from './Typo';
 
-interface InputStyle {
-  mode: string;
+interface InputProps {
+  mode?: string;
   iconType?: string;
   isError?: boolean;
+  errorMsg?: string;
+  width?: string;
+  padding?: string;
+  placeholder?: string;
+  onFocus?: () => void;
+  onBlur?: () => void;
+  trailingOnClick?: () => void;
 }
 
 export const INPUT_MODE = {
@@ -46,7 +54,7 @@ const setPadding = (mode, iconType = INPUT_ICON_TYPE.noIcon) => {
   }
 };
 
-export const Input = styled.input<InputStyle>`
+export const Input = styled.input<InputProps>`
   width: 100%;
   height: ${(props) => setSize(props.mode, '3.25rem', '2.75rem', '100%')};
   padding: ${(props) => setPadding(props.mode, props.iconType)};
@@ -75,12 +83,20 @@ export const DefaultInput = ({
   isError = false,
   errorMsg = '',
   iconType = INPUT_ICON_TYPE.noIcon,
+  placeholder = '',
   onFocus = () => {},
   onBlur = () => {},
 }) => {
   return (
     <>
-      <Input mode={mode} isError={isError} iconType={iconType} onFocus={onFocus} onBlur={onBlur} />
+      <Input
+        mode={mode}
+        isError={isError}
+        iconType={iconType}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        placeholder={placeholder}
+      />
       {isError && (
         <CaptionRegular12 margin="0.25rem 0 0" color="error500" textAlign="end">
           {errorMsg}
@@ -96,14 +112,17 @@ export const IconInput = ({
   errorMsg = '',
   iconType,
   trailingOnClick = () => {},
-}) => {
+  width,
+  placeholder = '',
+}: InputProps) => {
   const [isFocus, setIsFocus] = useState(false);
 
   const setIconColor = (color) => (isFocus ? 'redSalon300' : isError ? 'error500' : color);
+
   const isLeadingTrailing = iconType === INPUT_ICON_TYPE.leadingTrailingIcon;
 
   return (
-    <InputBox>
+    <Flex style={{ position: 'relative' }} width={width}>
       {isLeadingTrailing && (
         <LeadingIcon mode={mode}>
           <Icon iconName={ICON_TYPE.search} color={setIconColor('blackSalon200')} />
@@ -113,7 +132,7 @@ export const IconInput = ({
         <Icon
           iconName={isLeadingTrailing ? ICON_TYPE.closeCircle : ICON_TYPE.arrowV2Right}
           color={setIconColor('blackSalon100')}
-          onClick={trailingOnClick}
+          onClick={() => trailingOnClick()}
         />
       </LeadingIcon>
       <TrailingIcon mode={mode}>
@@ -126,22 +145,19 @@ export const IconInput = ({
         iconType={iconType}
         onFocus={() => !isError && setIsFocus(true)}
         onBlur={() => !isError && setIsFocus(false)}
+        placeholder={placeholder}
       />
-    </InputBox>
+    </Flex>
   );
 };
 
-const InputBox = styled.div`
-  position: relative;
-`;
-
-const LeadingIcon = styled.div<InputStyle>`
+const LeadingIcon = styled.div<InputProps>`
   position: absolute;
   top: ${(props) => setSize(props.mode, '0.875rem', '0.625rem', 0)};
   left: 0.75rem;
 `;
 
-const TrailingIcon = styled.div<InputStyle>`
+const TrailingIcon = styled.div<InputProps>`
   position: absolute;
   top: ${(props) => setSize(props.mode, '0.875rem', '0.625rem', 0)};
   right: 0.75rem;

@@ -8,6 +8,7 @@ type BarProps = {
   title?: string;
   icon?: string;
   children?: React.ReactNode;
+  padding?: string;
   colorBack?: string;
   colorFavorites?: string;
   colorTitle?: string;
@@ -65,6 +66,26 @@ export const BarBackWithFavorites = ({
           color={colorFavorites}
           onClick={onClick}
         />
+      </Row>
+    </Header>
+  );
+};
+
+export const BarBackWithComponent = ({
+  colorBack = 'blackSalon600',
+  padding,
+  children,
+}: BarProps) => {
+  return (
+    <Header>
+      <Row alignItems="center" width="100%" height="100%" padding={padding}>
+        <IconButton
+          iconName={ICON_TYPE.arrowV1Left}
+          margin="0 1rem 0 0"
+          color={colorBack}
+          onClick={() => window.history.back()}
+        />
+        {children}
       </Row>
     </Header>
   );
