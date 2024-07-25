@@ -75,7 +75,6 @@ export const Circle = styled(Row)`
 `;
 
 export const Card = styled(Column)`
-  padding: 1rem 0.5rem 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.05);
 `;

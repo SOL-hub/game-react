@@ -51,7 +51,7 @@ export const GameInfoCard = ({ itemInfo, salesItemWeight, salesText, margin }: s
   };
 
   return (
-    <Card margin={margin}>
+    <Card padding="1rem 0.5rem 1.5rem" margin={margin}>
       <TitleWithRedBedgeBox>
         <TitleWithRedBedge title="게임 정보" contents={doGetSalesItemWeight()} margin="0" />
       </TitleWithRedBedgeBox>
@@ -83,7 +83,7 @@ export const GameStatusCard = ({ data, margin }: salesCardProps) => {
   ];
 
   return (
-    <Card margin={margin}>
+    <Card padding="1rem 0.5rem 1.5rem" margin={margin}>
       <TitleWithRedBedgeBox isMaintain={almonstNew}>
         <TitleWithRedBedge
           title="게임 상태 설명"
