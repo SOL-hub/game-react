@@ -1,12 +1,15 @@
 import React from 'react';
-import { DefaultLayout } from 'components/common/Layout';
+import { DefaultLayout, Layout } from 'components/common/Layout';
 import { BarBackWithTitle } from 'components/common/Bar';
+import GameCategoryCard from 'domain/GameCategory/GameCategoryCard';
 
 const GameCategory = () => {
   return (
     <DefaultLayout>
       <BarBackWithTitle title="대표 카테고리 설명" />
-      대표게임 카테고리
+      <Layout>
+        <GameCategoryCard />
+      </Layout>
     </DefaultLayout>
   );
 };
