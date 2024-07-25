@@ -94,4 +94,5 @@ export const BarBackWithComponent = ({
 export const Header = styled.header`
   width: 100%;
   height: 3.75rem; //60px
+  background: ${(props) => props.theme.color.blackSalon0};
 `;
