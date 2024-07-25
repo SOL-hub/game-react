@@ -16,6 +16,7 @@ import { Bedge, BedgeCertification, BedgeHashtag } from '../components/common/Be
 import { GreyTitleWithContents, TitleWithRedBedge } from '../components/template/TitleAndContents';
 
 import * as PATH from '../utils/path';
+import { Input, INPUT_MODE } from 'components/common/Input';
 
 const containerStyles = css`
   background-color: pink;
@@ -42,6 +43,14 @@ const Home = () => {
         </LargeButton>
       </Layout>
       <div>
+        <Input mode={INPUT_MODE.large} />
+        <Input mode={INPUT_MODE.medium} />
+        <Input mode={INPUT_MODE.large} placeholder="플레이스 홀더" />
+        <Input mode={INPUT_MODE.medium} placeholder="플레이스 홀더" />
+        <Input mode={INPUT_MODE.large} placeholder="플레이스 홀더" disabled />
+        <Input mode={INPUT_MODE.medium} placeholder="플레이스 홀더" disabled />
+        <Input mode={INPUT_MODE.large} isError={true} />
+        <Input mode={INPUT_MODE.medium} isError={true} />
         <Icon iconName={ICON_TYPE.arrowV1Right} />
         <Icon iconName={ICON_TYPE.heartEmpty} size={50} />
         <Icon iconName={ICON_TYPE.heartFill} size={50} color="redSalon500" />
