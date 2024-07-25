@@ -37,6 +37,9 @@ const Home = () => {
         <LargeButton mode="main" onClick={() => navigate(`${PATH.GAME_CATEGORY}`)}>
           대표게임 카테고리로 이동
         </LargeButton>
+        <LargeButton mode="main" onClick={() => navigate(PATH.SALES_INTRO)}>
+          검색 인트로로 이동
+        </LargeButton>
       </Layout>
       <div>
         <Icon iconName={ICON_TYPE.arrowV1Right} />
