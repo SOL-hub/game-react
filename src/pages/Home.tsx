@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { DefaultLayout, Layout, Row } from '../components/common/Layout';
 import { LargeButton, MediumButton, SmallButton } from '../components/common/Button';
 import { HeaderWithTitle } from '../components/common/Bar';
@@ -13,14 +14,22 @@ import { getCards } from '../remote/card';
 import { useEffect } from 'react';
 import { Bedge, BedgeCertification, BedgeHashtag } from '../components/common/Bedge';
 import { GreyTitleWithContents, TitleWithRedBedge } from '../components/template/TitleAndContents';
-
-import * as PATH from '../utils/path';
+import {
+  Input,
+  DefaultInput,
+  IconInput,
+  INPUT_MODE,
+  INPUT_ICON_TYPE,
+} from 'components/common/Input';
+import * as PATH from 'utils/path';
 
 const containerStyles = css`
   background-color: pink;
 `;
 
 const Home = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     getCards();
   }, []);
@@ -28,11 +37,60 @@ const Home = () => {
     <DefaultLayout>
       <HeaderWithTitle title="해더" />
       <Layout background="redSalon50">
-        <Link to={`${PATH.SALES_DETAIL}/0`}>
-          <LargeButton mode="main">상세뷰로 이동</LargeButton>
-        </Link>
+        <LargeButton mode="main" onClick={() => navigate(`${PATH.SALES_DETAIL}/0`)}>
+          상세뷰로 이동
+        </LargeButton>
+        <LargeButton mode="main" onClick={() => navigate(`${PATH.GAME_CATEGORY}`)}>
+          대표게임 카테고리로 이동
+        </LargeButton>
+        <LargeButton mode="main" onClick={() => navigate(PATH.SALES_INTRO)}>
+          검색 인트로로 이동
+        </LargeButton>
       </Layout>
       <div>
+        <Input mode={INPUT_MODE.large} iconType={INPUT_ICON_TYPE.noIcon} />
+        <Input mode={INPUT_MODE.medium} iconType={INPUT_ICON_TYPE.noIcon} />
+        <Input
+          mode={INPUT_MODE.large}
+          iconType={INPUT_ICON_TYPE.trailingIcon}
+          placeholder="플레이스 홀더"
+        />
+        <Input
+          mode={INPUT_MODE.medium}
+          iconType={INPUT_ICON_TYPE.trailingIcon}
+          placeholder="플레이스 홀더"
+        />
+        <Input
+          mode={INPUT_MODE.large}
+          iconType={INPUT_ICON_TYPE.leadingTrailingIcon}
+          placeholder="플레이스 홀더"
+          disabled
+        />
+        <Input
+          mode={INPUT_MODE.medium}
+          iconType={INPUT_ICON_TYPE.leadingTrailingIcon}
+          placeholder="플레이스 홀더"
+          disabled
+        />
+        <Input mode={INPUT_MODE.large} iconType={INPUT_ICON_TYPE.noIcon} isError={true} />
+        <Input mode={INPUT_MODE.medium} iconType={INPUT_ICON_TYPE.noIcon} isError={true} />
+        {/* test */}
+        <DefaultInput mode={INPUT_MODE.large} />
+        <DefaultInput mode={INPUT_MODE.medium} isError={true} errorMsg="에러 메시지" />
+        <IconInput mode={INPUT_MODE.large} iconType={INPUT_ICON_TYPE.trailingIcon} />
+        <IconInput
+          mode={INPUT_MODE.medium}
+          iconType={INPUT_ICON_TYPE.trailingIcon}
+          isError={true}
+          errorMsg="에러 메시지"
+        />
+        <IconInput mode={INPUT_MODE.large} iconType={INPUT_ICON_TYPE.leadingTrailingIcon} />
+        <IconInput
+          mode={INPUT_MODE.medium}
+          iconType={INPUT_ICON_TYPE.leadingTrailingIcon}
+          isError={true}
+          errorMsg="에러 메시지"
+        />
         <Icon iconName={ICON_TYPE.arrowV1Right} />
         <Icon iconName={ICON_TYPE.heartEmpty} size={50} />
         <Icon iconName={ICON_TYPE.heartFill} size={50} color="redSalon500" />
@@ -60,9 +118,6 @@ const Home = () => {
         <GreyTitleWithContents title="게임이름" contents="스플랜더" />
       </Row>
       <Layout background="redSalon50">
-        <Link to={`${PATH.SALES_DETAIL}/0`}>
-          <LargeButton mode="main">상세뷰로 이동</LargeButton>
-        </Link>
         <BSTop title="test" subTitle="testtest" />
         버튼 컴포넌트
         {['main', 'soft', 'outlineRed', 'outlineGray', 'text'].map((mode, idx) => (
