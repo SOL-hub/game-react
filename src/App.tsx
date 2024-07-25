@@ -5,6 +5,7 @@ import * as PATH from './utils/path';
 import { css } from '@emotion/react';
 import styled from 'styled-components';
 import CategoryExplain from './pages/CategoryExplain';
+import SalesDetail from './pages/SalesDetail';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path={PATH.HOME} element={<Home />} />
         <Route path={PATH.TEST} element={<Test />} />
         <Route path={PATH.CATEGORYEXPLAIN} element={<CategoryExplain />} />
+        <Route path={`${PATH.SALES_DETAIL}/:salesId`} element={<SalesDetail />} />
       </Routes>
     </div>
   );

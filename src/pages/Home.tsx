@@ -1,4 +1,5 @@
-import { DefaultLayout, MainLayout, Row } from '../components/common/Layout';
+import { Link } from 'react-router-dom';
+import { DefaultLayout, Layout, Row } from '../components/common/Layout';
 import { LargeButton, MediumButton, SmallButton } from '../components/common/Button';
 import { HeaderWithTitle } from '../components/common/Bar';
 import { Icon, IconButton, ICON_TYPE } from '../components/common/Icon';
@@ -7,25 +8,30 @@ import BSText from '../components/common/BSText';
 import BSButton from '../components/common/BSButton';
 import BSInput from '../components/common/BSInput';
 import BSTextField from '../components/common/BSTextField';
-import BSAlert from '../components/common/BSAlert';
 import BSTop from '../components/common/BSTop';
 import { getCards } from '../remote/card';
 import { useEffect } from 'react';
-import { useAlertContext } from '@/components/contexts/AlertContext';
+import { Bedge, BedgeCertification, BedgeHashtag } from '../components/common/Bedge';
+import { GreyTitleWithContents, TitleWithRedBedge } from '../components/template/TitleAndContents';
+
+import * as PATH from '../utils/path';
 
 const containerStyles = css`
   background-color: pink;
 `;
 
 const Home = () => {
-  const { open } = useAlertContext();
-
   useEffect(() => {
     getCards();
   }, []);
   return (
     <DefaultLayout>
       <HeaderWithTitle title="해더" />
+      <Layout background="redSalon50">
+        <Link to={`${PATH.SALES_DETAIL}/0`}>
+          <LargeButton mode="main">상세뷰로 이동</LargeButton>
+        </Link>
+      </Layout>
       <div>
         <Icon iconName={ICON_TYPE.arrowV1Right} />
         <Icon iconName={ICON_TYPE.heartEmpty} size={50} />
@@ -43,7 +49,20 @@ const Home = () => {
           margin="2rem"
         />
       </div>
-      <MainLayout background="redSalon50">
+      <Row>
+        <Bedge>거래협의가능</Bedge>
+        <BedgeHashtag>전략</BedgeHashtag>
+        <BedgeCertification identified={true} />
+        <BedgeCertification identified={false} />
+      </Row>
+      <Row>
+        <TitleWithRedBedge title="게임정보" contents="난이도상" />
+        <GreyTitleWithContents title="게임이름" contents="스플랜더" />
+      </Row>
+      <Layout background="redSalon50">
+        <Link to={`${PATH.SALES_DETAIL}/0`}>
+          <LargeButton mode="main">상세뷰로 이동</LargeButton>
+        </Link>
         <BSTop title="test" subTitle="testtest" />
         버튼 컴포넌트
         {['main', 'soft', 'outlineRed', 'outlineGray', 'text'].map((mode, idx) => (
@@ -91,7 +110,7 @@ const Home = () => {
         <BSInput placeholder="test" aria-invalid={false} />
         <BSTextField label="아이디" />
         <BSTextField label="비밀번호" hasError={true} />
-      </MainLayout>
+      </Layout>
 
       {/* <BSAlert
         isOpen={true}
@@ -100,14 +119,6 @@ const Home = () => {
         title="testtest"
         onBtnClick={() => {}}
       /> */}
-
-      <BSButton
-        onClick={() => {
-          open({ title: '카드신청완료', description: '확인해주세요.', onBtnClick: () => {} });
-        }}
-      >
-        Alert 열림
-      </BSButton>
     </DefaultLayout>
   );
 };

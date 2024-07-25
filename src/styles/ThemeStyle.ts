@@ -1,7 +1,7 @@
 const mediaSize = {
-  Desktop: '(min-width: 1240px)',
-  Tablet: '(min-width: 768px)',
-  Mobile: '(min-width: 414px)',
+  Desktop: '(max-width: 1024px)',
+  Tablet: '(max-width: 768px)',
+  Mobile: '(max-width: 414px)',
 };
 
 export const color = {

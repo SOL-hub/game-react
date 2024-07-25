@@ -7,8 +7,9 @@ export interface IconProps {
   iconName: ICON_NAME_TYPE;
   size?: number;
   color?: string;
-  onClick?: () => void;
   margin?: string;
+  lineHeight?: string;
+  onClick?: () => void;
 }
 
 export const Icon = ({ iconName, size = 24, color = 'blackSalon600' }: IconProps) => {
@@ -29,11 +30,12 @@ export const IconButton = ({
   iconName,
   size = 24,
   color = 'blackSalon600',
-  onClick,
   margin,
+  lineHeight,
+  onClick,
 }: IconProps) => {
   return (
-    <IconButtonBox margin={margin} onClick={onClick}>
+    <IconButtonBox margin={margin} lineHeight={lineHeight} onClick={onClick}>
       <Icon iconName={iconName} size={size} color={color} />
     </IconButtonBox>
   );
@@ -41,9 +43,11 @@ export const IconButton = ({
 
 type boxType = {
   margin?: string;
+  lineHeight?: string;
 };
 
 const IconButtonBox = styled.div<boxType>`
   margin: ${(props) => props.margin};
+  line-height: ${(props) => props.lineHeight || 0};
   cursor: pointer;
 `;
