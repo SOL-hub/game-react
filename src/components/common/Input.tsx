@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Flex } from 'components/common/Layout';
-import { Icon, ICON_TYPE } from 'components/common/Icon';
+import { Icon, IconButton, ICON_TYPE } from 'components/common/Icon';
 import { CaptionRegular12 } from './Typo';
 
 interface InputProps {
-  mode?: string;
+  mode: string;
   iconType?: string;
   isError?: boolean;
   errorMsg?: string;
   width?: string;
   padding?: string;
   placeholder?: string;
+  value?: any;
+  onChange?: (e: any) => void;
+  onKeyPress?: (e: any) => void;
   onFocus?: () => void;
   onBlur?: () => void;
+  leadingOnClick?: () => void;
   trailingOnClick?: () => void;
 }
 
@@ -84,8 +88,11 @@ export const DefaultInput = ({
   errorMsg = '',
   iconType = INPUT_ICON_TYPE.noIcon,
   placeholder = '',
+  value = '',
   onFocus = () => {},
   onBlur = () => {},
+  onChange = () => {},
+  onKeyPress = () => {},
 }) => {
   return (
     <>
@@ -93,9 +100,12 @@ export const DefaultInput = ({
         mode={mode}
         isError={isError}
         iconType={iconType}
+        placeholder={placeholder}
+        value={value}
         onFocus={onFocus}
         onBlur={onBlur}
-        placeholder={placeholder}
+        onChange={onChange}
+        onKeyPress={onKeyPress}
       />
       {isError && (
         <CaptionRegular12 margin="0.25rem 0 0" color="error500" textAlign="end">
@@ -108,16 +118,20 @@ export const DefaultInput = ({
 
 export const IconInput = ({
   mode,
-  isError = false,
-  errorMsg = '',
+  isError,
+  errorMsg,
   iconType,
-  trailingOnClick = () => {},
   width,
-  placeholder = '',
+  placeholder,
+  value,
+  onChange,
+  onKeyPress,
+  leadingOnClick = () => {},
+  trailingOnClick = () => {},
 }: InputProps) => {
   const [isFocus, setIsFocus] = useState(false);
 
-  const setIconColor = (color) => (isFocus ? 'redSalon300' : isError ? 'error500' : color);
+  const doSetIconColor = (color) => (isFocus ? 'redSalon300' : isError ? 'error500' : color);
 
   const isLeadingTrailing = iconType === INPUT_ICON_TYPE.leadingTrailingIcon;
 
@@ -125,18 +139,22 @@ export const IconInput = ({
     <Flex style={{ position: 'relative' }} width={width}>
       {isLeadingTrailing && (
         <LeadingIcon mode={mode}>
-          <Icon iconName={ICON_TYPE.search} color={setIconColor('blackSalon200')} />
+          <IconButton
+            iconName={ICON_TYPE.search}
+            color={doSetIconColor('blackSalon200')}
+            onClick={() => leadingOnClick()}
+          />
         </LeadingIcon>
       )}
       <LeadingIcon mode={mode}>
-        <Icon
+        <IconButton
           iconName={isLeadingTrailing ? ICON_TYPE.closeCircle : ICON_TYPE.arrowV2Right}
-          color={setIconColor('blackSalon100')}
+          color={doSetIconColor('blackSalon100')}
           onClick={() => trailingOnClick()}
         />
       </LeadingIcon>
       <TrailingIcon mode={mode}>
-        <Icon iconName={ICON_TYPE.closeCircle} color={setIconColor('blackSalon100')} />
+        <Icon iconName={ICON_TYPE.closeCircle} color={doSetIconColor('blackSalon100')} />
       </TrailingIcon>
       <DefaultInput
         mode={mode}
