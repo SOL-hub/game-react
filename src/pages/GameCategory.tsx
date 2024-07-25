@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { DefaultLayout, Layout } from 'components/common/Layout';
 import { BarBackWithTitle } from 'components/common/Bar';
 import GameCategoryCard from 'domain/GameCategory/GameCategoryCard';
 
 const GameCategory = () => {
+  const [currentId, setCurrentId] = useState('');
+
   return (
     <DefaultLayout>
       <BarBackWithTitle title="대표 카테고리 설명" />
@@ -11,7 +13,17 @@ const GameCategory = () => {
         {GAME_CATEGORY_DATA.map((item) => {
           const { id, name, summary, detail } = item;
 
-          return <GameCategoryCard id={id} name={name} summary={summary} detail={detail} />;
+          return (
+            <GameCategoryCard
+              key={id}
+              id={id}
+              name={name}
+              summary={summary}
+              detail={detail}
+              currentId={currentId}
+              setCurrentId={setCurrentId}
+            />
+          );
         })}
       </Layout>
     </DefaultLayout>
