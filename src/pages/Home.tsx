@@ -14,9 +14,14 @@ import { getCards } from '../remote/card';
 import { useEffect } from 'react';
 import { Bedge, BedgeCertification, BedgeHashtag } from '../components/common/Bedge';
 import { GreyTitleWithContents, TitleWithRedBedge } from '../components/template/TitleAndContents';
-
-import * as PATH from '../utils/path';
-import { Input, INPUT_ICON_TYPE, INPUT_MODE } from 'components/common/Input';
+import {
+  Input,
+  DefaultInput,
+  IconInput,
+  INPUT_MODE,
+  INPUT_ICON_TYPE,
+} from 'components/common/Input';
+import * as PATH from 'utils/path';
 
 const containerStyles = css`
   background-color: pink;
@@ -69,6 +74,23 @@ const Home = () => {
         />
         <Input mode={INPUT_MODE.large} iconType={INPUT_ICON_TYPE.noIcon} isError={true} />
         <Input mode={INPUT_MODE.medium} iconType={INPUT_ICON_TYPE.noIcon} isError={true} />
+        {/* test */}
+        <DefaultInput mode={INPUT_MODE.large} />
+        <DefaultInput mode={INPUT_MODE.medium} isError={true} errorMsg="에러 메시지" />
+        <IconInput mode={INPUT_MODE.large} iconType={INPUT_ICON_TYPE.trailingIcon} />
+        <IconInput
+          mode={INPUT_MODE.medium}
+          iconType={INPUT_ICON_TYPE.trailingIcon}
+          isError={true}
+          errorMsg="에러 메시지"
+        />
+        <IconInput mode={INPUT_MODE.large} iconType={INPUT_ICON_TYPE.leadingTrailingIcon} />
+        <IconInput
+          mode={INPUT_MODE.medium}
+          iconType={INPUT_ICON_TYPE.leadingTrailingIcon}
+          isError={true}
+          errorMsg="에러 메시지"
+        />
         <Icon iconName={ICON_TYPE.arrowV1Right} />
         <Icon iconName={ICON_TYPE.heartEmpty} size={50} />
         <Icon iconName={ICON_TYPE.heartFill} size={50} color="redSalon500" />

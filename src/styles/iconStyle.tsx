@@ -7,6 +7,7 @@ export const ICON_NAME = {
   arrowV1Down: 'arrowV1Down',
   arrowV1Left: 'arrowV1Left',
   arrowV1Right: 'arrowV1Right',
+  arrowV2Right: 'arrowV2Right',
   heartEmpty: 'heartEmpty',
   heartFill: 'heartFill',
   search: 'search',
@@ -49,6 +50,16 @@ export const getIconSVGPath = ({ iconName, color }: IconProps) => {
       return (
         <path
           d="M9 6L15 12L9 18"
+          stroke={colorValue}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      );
+    case ICON_NAME.arrowV2Right:
+      return (
+        <path
+          d="M5 12H19M19 12L12 5M19 12L12 19"
           stroke={colorValue}
           stroke-width="2"
           stroke-linecap="round"
