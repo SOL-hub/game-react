@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { DefaultLayout, Layout, Row } from '../components/common/Layout';
 import { LargeButton, MediumButton, SmallButton } from '../components/common/Button';
 import { HeaderWithTitle } from '../components/common/Bar';
@@ -21,6 +22,8 @@ const containerStyles = css`
 `;
 
 const Home = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     getCards();
   }, []);
@@ -28,9 +31,12 @@ const Home = () => {
     <DefaultLayout>
       <HeaderWithTitle title="해더" />
       <Layout background="redSalon50">
-        <Link to={`${PATH.SALES_DETAIL}/0`}>
-          <LargeButton mode="main">상세뷰로 이동</LargeButton>
-        </Link>
+        <LargeButton mode="main" onClick={() => navigate(`${PATH.SALES_DETAIL}/0`)}>
+          상세뷰로 이동
+        </LargeButton>
+        <LargeButton mode="main" onClick={() => navigate(`${PATH.GAME_CATEGORY}`)}>
+          대표게임 카테고리로 이동
+        </LargeButton>
       </Layout>
       <div>
         <Icon iconName={ICON_TYPE.arrowV1Right} />
@@ -60,9 +66,6 @@ const Home = () => {
         <GreyTitleWithContents title="게임이름" contents="스플랜더" />
       </Row>
       <Layout background="redSalon50">
-        <Link to={`${PATH.SALES_DETAIL}/0`}>
-          <LargeButton mode="main">상세뷰로 이동</LargeButton>
-        </Link>
         <BSTop title="test" subTitle="testtest" />
         버튼 컴포넌트
         {['main', 'soft', 'outlineRed', 'outlineGray', 'text'].map((mode, idx) => (
