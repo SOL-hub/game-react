@@ -15,6 +15,7 @@ interface LayoutStyle {
   padding?: string;
   margin?: string;
   border?: string;
+  borderRadius?: string;
   borderWidth?: string;
   background?: string;
   backgroundImage?: string;
@@ -75,7 +76,7 @@ export const Circle = styled(Row)`
 `;
 
 export const Card = styled(Column)`
-  border-radius: 0.5rem;
+  border-radius: ${(props) => props.borderRadius || '0.5rem'};
   box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.05);
 `;
 
