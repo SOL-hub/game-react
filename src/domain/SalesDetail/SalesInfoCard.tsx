@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card, Row } from '../../components/common/Layout';
+import { Card, Flex } from '../../components/common/Layout';
 import {
   TitleWithRedBedge,
   GreyTitleWithContents,
@@ -51,14 +51,14 @@ export const GameInfoCard = ({ itemInfo, salesItemWeight, salesText, margin }: s
   };
 
   return (
-    <Card margin={margin}>
+    <Card padding="1rem 0.5rem 1.5rem" margin={margin}>
       <TitleWithRedBedgeBox>
         <TitleWithRedBedge title="게임 정보" contents={doGetSalesItemWeight()} margin="0" />
       </TitleWithRedBedgeBox>
       <GreyTitleWithContents title="게임 이름" contents={koreanItemName} />
-      <Row margin="0.75rem 0 0 auto">
+      <Flex margin="0.75rem 0 0 auto">
         <BedgeHashtag>{representCategoryKoreanName}</BedgeHashtag>
-      </Row>
+      </Flex>
       <GreyTitleWithContents title="게임소요시간" contents={`${playingTime}분`} />
       <GreyTitleWithContents title="플레이인원" contents={`${minPlayers}인 ~ ${maxPlayers}인`} />
       <BodyRegular16 margin="1.5rem 0">{salesText}</BodyRegular16>
@@ -83,7 +83,7 @@ export const GameStatusCard = ({ data, margin }: salesCardProps) => {
   ];
 
   return (
-    <Card margin={margin}>
+    <Card padding="1rem 0.5rem 1.5rem" margin={margin}>
       <TitleWithRedBedgeBox isMaintain={almonstNew}>
         <TitleWithRedBedge
           title="게임 상태 설명"
@@ -99,7 +99,7 @@ export const GameStatusCard = ({ data, margin }: salesCardProps) => {
   );
 };
 
-const TitleWithRedBedgeBox = styled(Row)`
+const TitleWithRedBedgeBox = styled(Flex)`
   padding: ${(props) => (props.isMaintain ? '0' : '0 0 1rem')};
   border: ${(props) => (props.isMaintain ? 'none' : '1px solid #e8e8e8')};
   border-width: ${(props) => (props.isMaintain ? '0' : '0 0 1px')};

@@ -7,8 +7,12 @@ export const ICON_NAME = {
   arrowV1Down: 'arrowV1Down',
   arrowV1Left: 'arrowV1Left',
   arrowV1Right: 'arrowV1Right',
+  arrowV2Right: 'arrowV2Right',
   heartEmpty: 'heartEmpty',
   heartFill: 'heartFill',
+  search: 'search',
+  closeCircle: 'closeCircle',
+  close: 'close',
 } as const;
 
 export const getIconSVGPath = ({ iconName, color }: IconProps) => {
@@ -52,6 +56,16 @@ export const getIconSVGPath = ({ iconName, color }: IconProps) => {
           stroke-linejoin="round"
         />
       );
+    case ICON_NAME.arrowV2Right:
+      return (
+        <path
+          d="M5 12H19M19 12L12 5M19 12L12 19"
+          stroke={colorValue}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      );
     case ICON_NAME.heartEmpty:
       return (
         <path
@@ -77,6 +91,33 @@ export const getIconSVGPath = ({ iconName, color }: IconProps) => {
             fill={colorValue}
           />
         </>
+      );
+    case ICON_NAME.search:
+      return (
+        <path
+          d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+          stroke={colorValue}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      );
+    case ICON_NAME.closeCircle:
+      return (
+        <path
+          d="M17.6997 6.33416C14.5797 3.22195 9.45987 3.22195 6.33994 6.33416C3.22002 9.44638 3.22002 14.5536 6.33994 17.6658C9.45987 20.7781 14.4997 20.7781 17.6197 17.6658C20.7396 14.5536 20.8196 9.44638 17.6997 6.33416ZM14.8184 14.7944C14.5096 15.1024 14.0099 15.1024 13.7012 14.7944L12.0198 13.1172L10.3385 14.7944C10.0297 15.1024 9.52999 15.1024 9.22126 14.7944C8.91145 14.4854 8.91145 13.9835 9.22126 13.6744L10.8998 12L9.22126 10.3256C8.91145 10.0165 8.91145 9.51465 9.22126 9.2056C9.52999 8.89763 10.0297 8.89763 10.3385 9.2056L12.0198 10.8828L13.7012 9.2056C14.0099 8.89763 14.5096 8.89763 14.8184 9.2056C15.1282 9.51465 15.1282 10.0165 14.8184 10.3256L13.1398 12L14.8184 13.6744C15.1282 13.9835 15.1282 14.4854 14.8184 14.7944Z"
+          fill={colorValue}
+        />
+      );
+    case ICON_NAME.close:
+      return (
+        <path
+          d="M18 6L6 18M6 6L18 18"
+          stroke={colorValue}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
       );
     default:
       return;

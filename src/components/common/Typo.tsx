@@ -6,6 +6,7 @@ interface TypoStyle {
   color?: string;
   lineHeight?: string;
   textOverflow?: string;
+  textAlign?: string;
 }
 
 export const HeadRegular = styled.div<TypoStyle>`
@@ -18,6 +19,7 @@ export const HeadRegular = styled.div<TypoStyle>`
   line-height: ${(props) => props.lineHeight};
   letter-spacing: -0.3px;
   text-overflow: ${(props) => props.textOverflow};
+  text-align: ${(props) => props.textAlign};
 `;
 
 export const HeadRegular20 = styled(HeadRegular)`
