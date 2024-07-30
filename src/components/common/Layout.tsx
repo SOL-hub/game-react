@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 interface LayoutStyle {
+  column?: boolean;
   flex?: number;
   flexDirection?: string;
   flexWrap?: string;
@@ -44,7 +45,7 @@ export const Flex = styled.div<LayoutStyle>`
   {...style}
   display: flex;
   flex: ${(props) => props.flex};
-  flex-direction: ${(props) => props.flexDirection};
+  flex-direction: ${(props) => (props.column ? 'column' : 'row')};
   flex-wrap: ${(props) => props.flexWrap || 'wrap'};
   justify-content: ${(props) => props.justifyContent};
   align-items: ${(props) => props.width};
