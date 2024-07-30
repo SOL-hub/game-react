@@ -3,7 +3,7 @@ import { useState } from 'react';
 const useSearch = () => {
   const [searchValue, setSearchValue] = useState('');
   const [recentSearches, setRecentSearches] = useState(JSON.parse(localStorage.searches || '[]'));
-  const [relatedSearches, setRelatedSearches] = useState([]);
+  const [relatedSearches, setRelatedSearches] = useState(['뱅', '스플렌더', '할리갈리']); // 테스트용
 
   const doSearch = () => {
     const newSearch = { id: Date.now(), text: searchValue };

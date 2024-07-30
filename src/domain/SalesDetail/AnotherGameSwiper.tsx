@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
-import { Column } from '../../components/common/Layout';
+import { Flex } from '../../components/common/Layout';
 import { TextBold16 } from '../../components/common/Typo';
 
 interface dataProps {
@@ -34,19 +34,20 @@ export const AnotherGameCard = ({ data }: dataProps) => {
   const { thumbnailUrl, itemName, title, salesPrice } = data;
 
   return (
-    <Column
+    <Flex
+      column
       width="7.5rem"
       onClick={() => console.log('판매자의 다른 게임의 salesDetail 페이지로 연결됨')}
     >
       <ThumbnailImage src={thumbnailUrl} alt="판매자의 다른 게임 이미지" />
-      <Column margin="1rem 0">
+      <Flex column margin="1rem 0">
         <GameName>{itemName}</GameName>
         <SalesTitle>{title}</SalesTitle>
-      </Column>
+      </Flex>
       <TextBold16 margin="0 0 0 auto" color="redSalon500">
         {salesPrice.toLocaleString()}원
       </TextBold16>
-    </Column>
+    </Flex>
   );
 };
 
