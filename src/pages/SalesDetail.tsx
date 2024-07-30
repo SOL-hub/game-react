@@ -1,13 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  DefaultLayout,
-  Layout,
-  Row,
-  Column,
-  GrayBox,
-  BottomBox,
-} from '../components/common/Layout';
+import { DefaultLayout, Layout, Flex, GrayBox, BottomBox } from '../components/common/Layout';
 import { BarBackWithFavorites } from '../components/common/Bar';
 import {
   HeadBold20,
@@ -49,17 +42,17 @@ const SalesDetail = () => {
       <Layout>
         <SalesPhotoSwiper data={data.salesItemImages} />
         <Profile data={data.seller} />
-        <Row margin="1.5rem 0 0.5rem">
+        <Flex margin="1.5rem 0 0.5rem">
           <HeadBold20 lineHeight="24px">{data.title}</HeadBold20>
-        </Row>
-        <Row>
+        </Flex>
+        <Flex>
           <CaptionRegular12 color="blackSalon300" lineHeight="19px" margin="0 0.75rem 0 0">
             {data.audit.createdDateTime.split(' ')[0].replace(/-/g, '.')}
           </CaptionRegular12>
           <CaptionRegular12 color="blackSalon300" lineHeight="19px" margin="0 0.75rem 0 0">
             조회수 {data.userInterest.viewCount}회
           </CaptionRegular12>
-          <Row alignItems="center">
+          <Flex alignItems="center">
             <IconButton
               iconName={onLike ? ICON_TYPE.heartFill : ICON_TYPE.heartEmpty}
               color={onLike ? 'redSalon500' : 'blackSalon300'}
@@ -71,17 +64,17 @@ const SalesDetail = () => {
             <CaptionRegular12 color="blackSalon300" lineHeight="19px" margin="0 0.75rem 0 0">
               {data.userInterest.favoritesCount}
             </CaptionRegular12>
-          </Row>
-        </Row>
-        <Column margin="2rem 0 1.5rem">
+          </Flex>
+        </Flex>
+        <Flex column margin="2rem 0 1.5rem">
           <TextRegular16 color="blackSalon500">판매자 정책</TextRegular16>
-          <Row margin="1rem 0 0 0">
+          <Flex margin="1rem 0 0 0">
             {doGetSalesPolicy().map((data: string, idx: number) => (
               <Bedge key={idx}>{data}</Bedge>
             ))}
-          </Row>
-        </Column>
-        <Row
+          </Flex>
+        </Flex>
+        <Flex
           justifyContent="space-between"
           padding="0 0 1.313rem"
           margin="0 0 2rem"
@@ -92,7 +85,7 @@ const SalesDetail = () => {
           <TextRegular16 color="blackSalon400">
             {data.salesPolicy.directTradeLocation}
           </TextRegular16>
-        </Row>
+        </Flex>
       </Layout>
       <Layout padding="0 1rem">
         <GameInfoCard
@@ -134,7 +127,7 @@ const SalesDetail = () => {
 
 export default SalesDetail;
 
-const SalesPrice = styled(Row)`
+const SalesPrice = styled(Flex)`
   flex: 2;
   justify-content: center;
   align-items: center;
@@ -147,7 +140,7 @@ const TransactionInquiryButton = styled(SalesPrice)`
   background: ${(props) => props.theme.color.redSalon500};
 `;
 
-const LowestPriceBox = styled(Row)`
+const LowestPriceBox = styled(Flex)`
   position: fixed;
   left: 50%;
   bottom: 5.5rem;

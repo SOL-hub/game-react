@@ -42,7 +42,7 @@ export const Layout = styled(DefaultLayout)<LayoutStyle>`
 `;
 
 export const Flex = styled.div<LayoutStyle>`
-  {...style}
+  /* {...style} */
   display: flex;
   flex: ${(props) => props.flex};
   flex-direction: ${(props) => (props.column ? 'column' : 'row')};
@@ -58,13 +58,6 @@ export const Flex = styled.div<LayoutStyle>`
   background: ${(props) => props.theme.color[props.background as keyof typeof props.theme.color]};
 `;
 
-export const Row = styled(Flex)`
-  flex-direction: row;
-`;
-
-export const Column = styled(Flex)`
-  flex-direction: column;
-`;
 export const Grid = styled.div<LayoutStyle>`
   display: grid;
   gap: ${(props) => props.gap};
@@ -73,16 +66,17 @@ export const Grid = styled.div<LayoutStyle>`
   place-content: ${(props) => props.placeContent};
 `;
 
-export const Circle = styled(Row)`
+export const Circle = styled(Flex)`
   border-radius: 50%;
 `;
 
-export const Card = styled(Column)`
+export const Card = styled(Flex)`
+  flex-direction: column;
   border-radius: ${(props) => props.borderRadius || '0.5rem'};
   box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.05);
 `;
 
-export const GrayBox = styled(Row)`
+export const GrayBox = styled(Flex)`
   width: 100%;
   height: ${({ height }) => height || '0.75rem'};
   background: ${(props) =>
@@ -90,7 +84,7 @@ export const GrayBox = styled(Row)`
     props.theme.color.blackSalon50};
 `;
 
-export const BottomBox = styled(Row)`
+export const BottomBox = styled(Flex)`
   position: fixed;
   bottom: 0;
   width: 100%;

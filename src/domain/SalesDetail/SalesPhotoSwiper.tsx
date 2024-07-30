@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
-import { Row } from 'components/common/Layout';
+import { Flex } from 'components/common/Layout';
 
 interface swiperProps {
   data: any;
@@ -78,7 +78,7 @@ const SwiperContainer = styled.div`
   }
 `;
 
-const SwiperFraction = styled(Row)`
+const SwiperFraction = styled(Flex)`
   justify-content: space-around;
   align-items: center;
   position: absolute;
