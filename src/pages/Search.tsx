@@ -39,7 +39,7 @@ const Search = () => {
       </BarBackWithComponent>
       <Layout padding="0 1rem">
         <Flex column padding="0.5rem 0 2rem">
-          <SearchIntroTitle margin="0 0 0.5rem">최근 검색어</SearchIntroTitle>
+          <SearchTitle margin="0 0 0.5rem">최근 검색어</SearchTitle>
           {['스컬킹2', '보드겟뚜', '뱅 2'].map((item, idx) => (
             <RecentSearch key={idx}>
               <TextRegular14 color="blackSalon500">{item}</TextRegular14>
@@ -48,7 +48,7 @@ const Search = () => {
           ))}
         </Flex>
         <Flex padding="0.5rem 0 2rem">
-          <SearchIntroTitle margin="0 0 0.5rem">연관 검색어</SearchIntroTitle>
+          <SearchTitle margin="0 0 0.5rem">연관 검색어</SearchTitle>
           {['스컬킹2', '보드겟뚜', '뱅 2'].map((item, idx) => (
             <TextRegular14 margin=" 0.5rem 0" lineHeight="17px" color="blackSalon500" key={idx}>
               {item}
@@ -56,14 +56,14 @@ const Search = () => {
           ))}
         </Flex>
         <Flex column>
-          <SearchIntroTitle>상세하게 원하는 게임을 찾고 싶다면?</SearchIntroTitle>
+          <SearchTitle>상세하게 원하는 게임을 찾고 싶다면?</SearchTitle>
           <MediumButton mode="soft" onClick={() => console.log('카테고리 검색 페이지로 이동')}>
             카테고리 검색하기
           </MediumButton>
 
           {relatedSearches.length > 0 ? (
             <>
-              <SearchIntroTitle margin="0 0 0.5rem">연관 검색어</SearchIntroTitle>
+              <SearchTitle margin="0 0 0.5rem">연관 검색어</SearchTitle>
               {relatedSearches.map((item, idx) => (
                 <TextRegular14
                   key={idx}
@@ -78,7 +78,7 @@ const Search = () => {
             </>
           ) : (
             <>
-              <SearchIntroTitle margin="0 0 0.5rem">최근 검색어</SearchIntroTitle>
+              <SearchTitle margin="0 0 0.5rem">최근 검색어</SearchTitle>
               {recentSearches.slice(0, 3).map((item, idx) => (
                 <RecentSearch key={idx}>
                   <TextRegular14
@@ -120,7 +120,7 @@ const Search = () => {
 
 export default Search;
 
-const SearchIntroTitle = styled(TextRegular16)`
+const SearchTitle = styled(TextRegular16)`
   margin: ${(props) => props.margin || '0 0 1rem'};
   color: ${(props) => props.theme.color.blackSalon300};
 `;
