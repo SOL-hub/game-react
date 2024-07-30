@@ -3,12 +3,14 @@ import { IconInput, INPUT_ICON_TYPE, INPUT_MODE } from 'components/common/Input'
 import styled from 'styled-components';
 import { DefaultLayout, Flex, Layout } from 'components/common/Layout';
 import React from 'react';
-import { TextRegular16, TextRegular14 } from 'components/common/Typo';
+import { TextRegular16, TextRegular14, TextBold14 } from 'components/common/Typo';
 import { IconButton, ICON_TYPE } from 'components/common/Icon';
 import { MediumButton } from 'components/common/Button';
 import useSearch from 'hooks/sales/useSearch';
+import { TextChip } from 'components/common/Chip';
+import { Divider2 } from 'components/common/Divider';
 
-const SearchTitle = () => {
+const Search = () => {
   const {
     searchValue,
     setSearchValue,
@@ -37,7 +39,7 @@ const SearchTitle = () => {
       </BarBackWithComponent>
       <Layout padding="0 1rem">
         <Flex column padding="0.5rem 0 2rem">
-          <SearchTitleTitle margin="0 0 0.5rem">최근 검색어</SearchTitleTitle>
+          <SearchTitle margin="0 0 0.5rem">최근 검색어</SearchTitle>
           {['스컬킹2', '보드겟뚜', '뱅 2'].map((item, idx) => (
             <RecentSearch key={idx}>
               <TextRegular14 color="blackSalon500">{item}</TextRegular14>
@@ -45,8 +47,8 @@ const SearchTitle = () => {
             </RecentSearch>
           ))}
         </Flex>
-        <Flex column padding="0.5rem 0 2rem">
-          <SearchTitleTitle margin="0 0 0.5rem">연관 검색어</SearchTitleTitle>
+        <Flex padding="0.5rem 0 2rem">
+          <SearchTitle margin="0 0 0.5rem">연관 검색어</SearchTitle>
           {['스컬킹2', '보드겟뚜', '뱅 2'].map((item, idx) => (
             <TextRegular14 margin=" 0.5rem 0" lineHeight="17px" color="blackSalon500" key={idx}>
               {item}
@@ -54,14 +56,14 @@ const SearchTitle = () => {
           ))}
         </Flex>
         <Flex column>
-          <SearchTitleTitle>상세하게 원하는 게임을 찾고 싶다면?</SearchTitleTitle>
+          <SearchTitle>상세하게 원하는 게임을 찾고 싶다면?</SearchTitle>
           <MediumButton mode="soft" onClick={() => console.log('카테고리 검색 페이지로 이동')}>
             카테고리 검색하기
           </MediumButton>
 
           {relatedSearches.length > 0 ? (
             <>
-              <SearchTitleTitle margin="0 0 0.5rem">연관 검색어</SearchTitleTitle>
+              <SearchTitle margin="0 0 0.5rem">연관 검색어</SearchTitle>
               {relatedSearches.map((item, idx) => (
                 <TextRegular14
                   key={idx}
@@ -76,7 +78,7 @@ const SearchTitle = () => {
             </>
           ) : (
             <>
-              <SearchTitleTitle margin="0 0 0.5rem">최근 검색어</SearchTitleTitle>
+              <SearchTitle margin="0 0 0.5rem">최근 검색어</SearchTitle>
               {recentSearches.slice(0, 3).map((item, idx) => (
                 <RecentSearch key={idx}>
                   <TextRegular14
@@ -96,13 +98,29 @@ const SearchTitle = () => {
           )}
         </Flex>
       </Layout>
+      <Layout padding="0">
+        <Flex padding="1rem 1.5rem 0.5rem" alignItems="center">
+          <TextBold14 color="redSalon500">연관검색</TextBold14>
+          {relatedSearches.slice(0, 3).map((item, idx) => (
+            <TextChip key={idx} margin="0 0 0 0.875rem">
+              {item}
+            </TextChip>
+          ))}
+        </Flex>
+        <Divider2 />
+        divider
+        <Flex column style={{ position: 'sticky' }}>
+          필터가 들어갈 자리
+          <Divider2 />
+        </Flex>
+      </Layout>
     </DefaultLayout>
   );
 };
 
-export default SearchTitle;
+export default Search;
 
-const SearchTitleTitle = styled(TextRegular16)`
+const SearchTitle = styled(TextRegular16)`
   margin: ${(props) => props.margin || '0 0 1rem'};
   color: ${(props) => props.theme.color.blackSalon300};
 `;

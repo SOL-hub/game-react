@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Row } from './Layout';
+import { Flex } from './Layout';
 import { ICON_TYPE, IconButton } from './Icon';
 import { TextBold16 } from './Typo';
 
@@ -19,9 +19,9 @@ type BarProps = {
 export const HeaderWithTitle = ({ title }: BarProps) => {
   return (
     <Header>
-      <Row justifyContent="center" alignItems="center" width="100%" height="100%">
+      <Flex justifyContent="center" alignItems="center" width="100%" height="100%">
         {title}
-      </Row>
+      </Flex>
     </Header>
   );
 };
@@ -33,7 +33,7 @@ export const BarBackWithTitle = ({
 }: BarProps) => {
   return (
     <Header>
-      <Row alignItems="center" padding="1.125rem 1rem">
+      <Flex alignItems="center" padding="1.125rem 1rem">
         <IconButton
           iconName={ICON_TYPE.arrowV1Left}
           color={colorBack}
@@ -42,7 +42,7 @@ export const BarBackWithTitle = ({
         <TextBold16 margin="3px 0 0 1rem" color={colorTitle}>
           {title}
         </TextBold16>
-      </Row>
+      </Flex>
     </Header>
   );
 };
@@ -55,7 +55,7 @@ export const BarBackWithFavorites = ({
 }: BarProps) => {
   return (
     <Header>
-      <Row justifyContent="space-between" width="100%" padding="1.125rem 1rem">
+      <Flex justifyContent="space-between" width="100%" padding="1.125rem 1rem">
         <IconButton
           iconName={ICON_TYPE.arrowV1Left}
           color={colorBack}
@@ -66,7 +66,7 @@ export const BarBackWithFavorites = ({
           color={colorFavorites}
           onClick={onClick}
         />
-      </Row>
+      </Flex>
     </Header>
   );
 };
@@ -78,7 +78,7 @@ export const BarBackWithComponent = ({
 }: BarProps) => {
   return (
     <Header>
-      <Row alignItems="center" width="100%" height="100%" padding={padding}>
+      <Flex alignItems="center" width="100%" height="100%" padding={padding}>
         <IconButton
           iconName={ICON_TYPE.arrowV1Left}
           margin="0 1rem 0 0"
@@ -86,7 +86,7 @@ export const BarBackWithComponent = ({
           onClick={() => window.history.back()}
         />
         {children}
-      </Row>
+      </Flex>
     </Header>
   );
 };

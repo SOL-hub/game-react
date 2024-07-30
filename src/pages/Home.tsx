@@ -1,6 +1,5 @@
-// import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { DefaultLayout, Layout, Row } from '../components/common/Layout';
+import { DefaultLayout, Layout, Flex } from '../components/common/Layout';
 import { LargeButton, MediumButton, SmallButton } from '../components/common/Button';
 import { HeaderWithTitle } from '../components/common/Bar';
 import { Icon, IconButton, ICON_TYPE } from '../components/common/Icon';
@@ -107,21 +106,21 @@ const Home = () => {
           margin="2rem"
         />
       </div>
-      <Row>
+      <Flex>
         <Bedge>거래협의가능</Bedge>
         <BedgeHashtag>전략</BedgeHashtag>
         <BedgeCertification identified={true} />
         <BedgeCertification identified={false} />
-      </Row>
-      <Row>
+      </Flex>
+      <Flex>
         <TitleWithRedBedge title="게임정보" contents="난이도상" />
         <GreyTitleWithContents title="게임이름" contents="스플랜더" />
-      </Row>
+      </Flex>
       <Layout background="redSalon50">
         <BSTop title="test" subTitle="testtest" />
         버튼 컴포넌트
         {['main', 'soft', 'outlineRed', 'outlineGray', 'text'].map((mode, idx) => (
-          <Row margin="2rem 0" key={idx}>
+          <Flex margin="2rem 0" key={idx}>
             <LargeButton mode={mode} margin="0.5rem">
               Large {mode}
             </LargeButton>
@@ -131,7 +130,7 @@ const Home = () => {
             <SmallButton mode={mode} margin="0.5rem">
               Small {mode}
             </SmallButton>
-          </Row>
+          </Flex>
         ))}
         <BSButton color="success">emotion으로 만든 버튼</BSButton>
         <BSButton color="error">emotion으로 만든 버튼</BSButton>
@@ -149,7 +148,7 @@ const Home = () => {
         </BSText>
         버튼 컴포넌트 Disabled
         {['main', 'soft', 'outlineRed', 'outlineGray', 'text'].map((mode, idx) => (
-          <Row margin="2rem 0" key={idx}>
+          <Flex margin="2rem 0" key={idx}>
             <LargeButton mode={mode} margin="0.5rem" disabled>
               Large {mode}
             </LargeButton>
@@ -159,7 +158,7 @@ const Home = () => {
             <SmallButton mode={mode} margin="0.5rem" disabled>
               Small {mode}
             </SmallButton>
-          </Row>
+          </Flex>
         ))}
         <BSInput placeholder="test" aria-invalid={true} />
         <BSInput placeholder="test" aria-invalid={false} />

@@ -1,9 +1,9 @@
 import React, { Children } from 'react';
 import styled from 'styled-components';
-import { Row } from './Layout';
+import { Flex } from './Layout';
 import { TextRegular14, TextRegular16, TextBold16, CaptionRegular12 } from './Typo';
 
-const BedgeBox = styled(Row)`
+const BedgeBox = styled(Flex)`
   justify-content: center;
   align-items: center;
   height: ${(props) => props.height};

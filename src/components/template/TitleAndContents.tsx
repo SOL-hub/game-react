@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Row } from '../../components/common/Layout';
+import { Flex } from '../../components/common/Layout';
 import { RedBedge } from '../../components/common/Bedge';
 import { TextBold16, TextRegular16 } from '../../components/common/Typo';
 
@@ -29,7 +29,7 @@ export const GreyTitleWithContents = ({ title, contents, margin }: componentsPro
   );
 };
 
-const TitleWithContentsBox = styled(Row)`
+const TitleWithContentsBox = styled(Flex)`
   justify-content: space-between;
   align-items: center;
   width: 100%;

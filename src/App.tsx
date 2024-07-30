@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import CategoryExplain from './pages/CategoryExplain';
 import SalesDetail from 'pages/SalesDetail';
 import GameCategory from 'pages/GameCategory';
-import SearchIntro from 'pages/SearchIntro';
+import Search from 'pages/Search';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route path={PATH.HOME} element={<Home />} />
         <Route path={PATH.TEST} element={<Test />} />
         <Route path={PATH.CATEGORYEXPLAIN} element={<CategoryExplain />} />
-        <Route path={PATH.SALES_INTRO} element={<SearchIntro />} />
+        <Route path={PATH.SALES_INTRO} element={<Search />} />
         <Route path={`${PATH.SALES_DETAIL}/:salesId`} element={<SalesDetail />} />
       </Routes>
     </div>
