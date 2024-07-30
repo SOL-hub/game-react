@@ -8,6 +8,7 @@ import { IconButton, ICON_TYPE } from 'components/common/Icon';
 import { MediumButton } from 'components/common/Button';
 import useSearch from 'hooks/sales/useSearch';
 import { TextChip } from 'components/common/Chip';
+import { Divider2 } from 'components/common/Divider';
 
 const Search = () => {
   const {
@@ -106,6 +107,8 @@ const Search = () => {
             </TextChip>
           ))}
         </Row>
+        <Divider2 />
+        divider
       </Layout>
     </DefaultLayout>
   );

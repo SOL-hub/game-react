@@ -83,8 +83,10 @@ export const Card = styled(Column)`
 
 export const GrayBox = styled(Row)`
   width: 100%;
-  height: 0.75rem;
-  background: ${(props) => props.theme.color.blackSalon50};
+  height: ${({ height }) => height || '0.75rem'};
+  background: ${(props) =>
+    props.theme.color[props.background as keyof typeof props.theme.color] ||
+    props.theme.color.blackSalon50};
 `;
 
 export const BottomBox = styled(Row)`
