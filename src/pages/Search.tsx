@@ -9,6 +9,8 @@ import { MediumButton } from 'components/common/Button';
 import useSearch from 'hooks/sales/useSearch';
 import { TextChip } from 'components/common/Chip';
 import { Divider2 } from 'components/common/Divider';
+import SearchFilter from 'domain/Search/SearchFilter';
+import LatestDropBox from 'domain/Search/LatestDropBox';
 
 const Search = () => {
   const {
@@ -110,7 +112,10 @@ const Search = () => {
         <Divider2 />
         divider
         <Flex column style={{ position: 'sticky' }}>
-          필터가 들어갈 자리
+          <Flex padding="0.625rem 1.5rem">
+            <LatestDropBox />
+            <SearchFilter />
+          </Flex>
           <Divider2 />
         </Flex>
       </Layout>

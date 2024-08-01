@@ -13,6 +13,7 @@ export const ICON_NAME = {
   search: 'search',
   closeCircle: 'closeCircle',
   close: 'close',
+  filter: 'filter',
 } as const;
 
 export const getIconSVGPath = ({ iconName, color }: IconProps) => {
@@ -118,6 +119,32 @@ export const getIconSVGPath = ({ iconName, color }: IconProps) => {
           stroke-linecap="round"
           stroke-linejoin="round"
         />
+      );
+    case ICON_NAME.filter:
+      return (
+        <>
+          <circle cx="16.2857" cy="15.4285" r="3.28571" stroke={colorValue} stroke-width="2" />
+          <circle cx="7.7143" cy="8.28571" r="3.28571" stroke={colorValue} stroke-width="2" />
+          <path d="M2 8.28613H4" stroke={colorValue} stroke-width="2" stroke-linecap="round" />
+          <path
+            d="M2 15.2861H13.0009"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M11 8.28613L22 8.28613"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M20 15.2861L22 15.2861"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </>
       );
     default:
       return;
