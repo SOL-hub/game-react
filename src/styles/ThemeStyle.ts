@@ -28,8 +28,19 @@ export const color = {
   subBlue400: '#5166D3',
 };
 
-const ThemeStyle = { mediaSize, color };
+export const fontSize = {
+  12: '0.75rem',
+  14: '0.875rem',
+  15: '0.938rem',
+  16: '1rem',
+  18: '1.125rem',
+  20: '1.25rem',
+};
+
+const ThemeStyle = { mediaSize, color, fontSize };
 
 export type Theme = typeof ThemeStyle;
 
 export default ThemeStyle;
+
+export const propsColor = (stringColor) => stringColor as keyof typeof color;
