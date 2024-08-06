@@ -3,12 +3,17 @@ import { DefaultLayout } from 'components/common/Layout';
 import SearchBanner from 'domain/Search/SearchBanner';
 import SalesList from 'domain/Search/SalesList';
 import BottomNavigation from 'components/template/BottomNavigation';
+import useSearch from 'hooks/sales/useSearch';
 
 const Search = () => {
+  const { searchResults } = useSearch();
+
   return (
     <DefaultLayout>
       <SearchBanner />
-      <SalesList />
+      {searchResults.map((item, idx) => (
+        <SalesList key={idx} item={item} />
+      ))}
       <BottomNavigation />
     </DefaultLayout>
   );

@@ -13,21 +13,27 @@ import { BedgeBox } from 'components/common/Bedge';
 import { Icon, ICON_TYPE } from 'components/common/Icon';
 import * as PATH from '../../utils/path';
 
-const SalesList = () => {
+const SalesList = ({ item }) => {
   const navigate = useNavigate();
-  const isNew = true;
-  const isReservation = true;
+  const {
+    id,
+    thumbnail: { url },
+    reservation,
+    title,
+    salesPrice,
+    itemInfo: { koreanItemName, minPlayers, maxPlayers },
+    salesItemCondition: { almostNew },
+    userInterest: { favoritesCount },
+    salesPolicy: { directTradeLocation },
+  } = item;
   const [onLike, setOnLike] = useState(false);
 
   return (
     <Flex column padding="1rem 1rem 0">
-      <Flex style={{ cursor: 'pointer' }} onClick={() => navigate(`${PATH.SALES_DETAIL}/0`)}>
+      <Flex style={{ cursor: 'pointer' }} onClick={() => navigate(`${PATH.SALES_DETAIL}/${id}`)}>
         <Flex style={{ position: 'relative' }}>
-          <ThumbnailImage
-            src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Elon_Musk_Royal_Society.jpg"
-            alt="썸네일 이미지"
-          />
-          {isReservation && (
+          <ThumbnailImage src={url} alt="썸네일 이미지" />
+          {reservation && (
             <ReservationLabel>
               <CaptionRegular12 color="black0">예약중</CaptionRegular12>
             </ReservationLabel>
@@ -43,11 +49,11 @@ const SalesList = () => {
               textOverflow: 'ellipsis',
             }}
           >
-            보드살롱보드살롱보드살롱보드살롱보드살롱보드살롱보드살롱보드살롱보드살롱보드살롱보드살롱
+            {title}
           </HeadRegular18>
           <Flex margin="0.5rem 0 0">
-            <BedgeBox height="1.688rem" background={isNew ? 'subBlue50' : 'black50'}>
-              {isNew && (
+            <BedgeBox height="1.688rem" background={almostNew ? 'subBlue50' : 'black50'}>
+              {almostNew && (
                 <CaptionBold12 margin="0 0.625rem 0 0" color="subBlue400">
                   새제품
                 </CaptionBold12>
@@ -56,14 +62,16 @@ const SalesList = () => {
             </BedgeBox>
           </Flex>
           <Flex alignItems="center" margin="auto 0 0">
-            <HeadBold20>150,000원</HeadBold20>
+            <HeadBold20>{salesPrice.toLocaleString()}원</HeadBold20>
             <Icon
               iconName={ICON_TYPE.player}
               size={20}
               margin="0 0.188rem 0 auto"
               color="black500"
             />
-            <CaptionBold12 color="black500">1~2</CaptionBold12>
+            <CaptionBold12 color="black500">
+              {minPlayers}~{maxPlayers}
+            </CaptionBold12>
           </Flex>
         </Flex>
       </Flex>

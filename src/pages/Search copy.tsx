@@ -20,6 +20,7 @@ const Search = () => {
   const {
     searchValue,
     setSearchValue,
+    searchResults,
     recentSearches,
     doSearch,
     doDeleteRecentSearches,
@@ -116,7 +117,7 @@ const Search = () => {
           ))}
         </Flex>
         <Divider2 />
-        <SalesList />
+        <SalesList item={searchResults[0]} />
         <Flex column style={{ position: 'sticky' }}>
           <Flex padding="0.625rem 1.5rem">
             <LatestDropBox />
@@ -131,7 +132,7 @@ const Search = () => {
           </Flex>
           <Divider2 />
         </Flex>
-        <SalesList />
+        <SalesList item={searchResults[0]} />
         <BottomNavigation />
       </Layout>
     </DefaultLayout>
