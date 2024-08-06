@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { DefaultLayout, Layout, Flex } from '../components/common/Layout';
 import { LargeButton, MediumButton, SmallButton } from '../components/common/Button';
 import { HeaderWithTitle } from '../components/common/Bar';
-import { Icon, IconButton, ICON_TYPE } from '../components/common/Icon';
+import { Icon, ICON_TYPE } from '../components/common/Icon';
 import { css } from '@emotion/react';
 import BSText from '../components/common/BSText';
 import BSButton from '../components/common/BSButton';
@@ -93,16 +93,16 @@ const Home = () => {
         <Icon iconName={ICON_TYPE.arrowV1Right} />
         <Icon iconName={ICON_TYPE.heartEmpty} size={50} />
         <Icon iconName={ICON_TYPE.heartFill} size={50} color="red500" />
-        <IconButton
+        <Icon
           iconName={ICON_TYPE.heartFill}
           size={50}
           color="red100"
-          onClick={() => console.log('iconButton')}
+          onClick={() => console.log('icon')}
         />
-        <IconButton
+        <Icon
           iconName={ICON_TYPE.heartFill}
           color="red200"
-          onClick={() => console.log('iconButton')}
+          onClick={() => console.log('icon')}
           margin="2rem"
         />
       </div>

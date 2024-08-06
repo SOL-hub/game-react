@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { DefaultLayout, Flex, Layout } from 'components/common/Layout';
 import React from 'react';
 import { TextRegular16, TextRegular14, TextBold14 } from 'components/common/Typo';
-import { IconButton, ICON_TYPE } from 'components/common/Icon';
+import { Icon, ICON_TYPE } from 'components/common/Icon';
 import { MediumButton } from 'components/common/Button';
 import useSearch from 'hooks/sales/useSearch';
 import { TextChip } from 'components/common/Chip';
@@ -13,6 +13,7 @@ import SearchFilter from 'domain/Search/SearchFilter';
 import LatestDropBox from 'domain/Search/LatestDropBox';
 import { Checkbox } from 'components/molecules/Checkbox';
 import useCheckbox from 'components/common/useCheckbox';
+import SalesList from 'domain/Search/SalesList';
 
 const Search = () => {
   const {
@@ -49,7 +50,7 @@ const Search = () => {
           {['스컬킹2', '보드겟뚜', '뱅 2'].map((item, idx) => (
             <RecentSearch key={idx}>
               <TextRegular14 color="black500">{item}</TextRegular14>
-              <IconButton iconName={ICON_TYPE.close} color="black200" />
+              <Icon iconName={ICON_TYPE.close} color="black200" />
             </RecentSearch>
           ))}
         </Flex>
@@ -93,7 +94,7 @@ const Search = () => {
                   >
                     {item.text}
                   </TextRegular14>
-                  <IconButton
+                  <Icon
                     iconName={ICON_TYPE.close}
                     color="black200"
                     onClick={() => doDeleteRecentSearches(item.id)}
@@ -114,7 +115,7 @@ const Search = () => {
           ))}
         </Flex>
         <Divider2 />
-        divider
+        <SalesList />
         <Flex column style={{ position: 'sticky' }}>
           <Flex padding="0.625rem 1.5rem">
             <LatestDropBox />

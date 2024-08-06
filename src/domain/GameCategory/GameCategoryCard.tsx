@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeadRegular18, BodyRegular15 } from 'components/common/Typo';
-import { IconButton, ICON_TYPE } from 'components/common/Icon';
+import { Icon, ICON_TYPE } from 'components/common/Icon';
 import { Card, Flex } from 'components/common/Layout';
 
 const GameCategoryCard = ({
@@ -22,7 +22,7 @@ const GameCategoryCard = ({
     >
       <Flex justifyContent="space-between" alignItems="center" margin="0 0 1rem">
         <HeadRegular18>{representCategoryKoreanName}</HeadRegular18>
-        <IconButton
+        <Icon
           iconName={isActive ? ICON_TYPE.arrowV1Up : ICON_TYPE.arrowV1Down}
           color="red500"
           onClick={() => setCurrentName(isActive ? '' : representCategoryName)}

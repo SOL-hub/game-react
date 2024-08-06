@@ -1,53 +1,52 @@
 import React from 'react';
 import styled from 'styled-components';
-import { getIconSVGPath, ICON_NAME_TYPE, ICON_NAME } from '../../styles/iconStyle';
-
+import { getIconSVGPath, ICON_NAME_TYPE, ICON_NAME } from 'styles/iconStyle';
 export const ICON_TYPE = ICON_NAME;
 export interface IconProps {
   iconName: ICON_NAME_TYPE;
   size?: number;
-  color?: string;
   margin?: string;
+  color?: string;
   lineHeight?: string;
   onClick?: () => void;
 }
 
-export const Icon = ({ iconName, size = 24, color = 'black600' }: IconProps) => {
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {getIconSVGPath({ iconName, color })}
-    </svg>
-  );
-};
-
-export const IconButton = ({
+export const Icon = ({
   iconName,
   size = 24,
-  color = 'black600',
   margin,
+  color = 'black600',
   lineHeight,
-  onClick,
+  onClick = undefined,
 }: IconProps) => {
   return (
-    <IconButtonBox margin={margin} lineHeight={lineHeight} onClick={onClick}>
-      <Icon iconName={iconName} size={size} color={color} />
-    </IconButtonBox>
+    <IconBox
+      margin={margin}
+      lineHeight={lineHeight}
+      cursor={onClick && 'pointer'}
+      onClick={onClick}
+    >
+      <svg
+        width={size}
+        height={size}
+        viewBox={iconName === ICON_TYPE.player ? '0 0 20 20' : '0 0 24 24'}
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {getIconSVGPath({ iconName, color })}
+      </svg>
+    </IconBox>
   );
 };
 
-type boxType = {
+type BoxType = {
   margin?: string;
   lineHeight?: string;
+  cursor?: string;
 };
 
-const IconButtonBox = styled.div<boxType>`
+const IconBox = styled.div<BoxType>`
   margin: ${(props) => props.margin};
   line-height: ${(props) => props.lineHeight || 0};
-  cursor: pointer;
+  cursor: ${(props) => props.cursor};
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Flex } from './Layout';
-import { ICON_TYPE, IconButton } from './Icon';
+import { Icon, ICON_TYPE } from './Icon';
 import { TextBold16 } from './Typo';
 
 type BarProps = {
@@ -34,7 +34,7 @@ export const BarBackWithTitle = ({
   return (
     <Header>
       <Flex alignItems="center" padding="1.125rem 1rem">
-        <IconButton
+        <Icon
           iconName={ICON_TYPE.arrowV1Left}
           color={colorBack}
           onClick={() => window.history.back()}
@@ -56,12 +56,12 @@ export const BarBackWithFavorites = ({
   return (
     <Header>
       <Flex justifyContent="space-between" width="100%" padding="1.125rem 1rem">
-        <IconButton
+        <Icon
           iconName={ICON_TYPE.arrowV1Left}
           color={colorBack}
           onClick={() => window.history.back()}
         />
-        <IconButton
+        <Icon
           iconName={isFavorites ? ICON_TYPE.heartFill : ICON_TYPE.heartEmpty}
           color={colorFavorites}
           onClick={onClick}
@@ -75,7 +75,7 @@ export const BarBackWithComponent = ({ colorBack = 'black600', padding, children
   return (
     <Header>
       <Flex alignItems="center" width="100%" height="100%" padding={padding}>
-        <IconButton
+        <Icon
           iconName={ICON_TYPE.arrowV1Left}
           margin="0 1rem 0 0"
           color={colorBack}

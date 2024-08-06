@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { DefaultLayout, Flex, Layout } from 'components/common/Layout';
 import React from 'react';
 import { TextRegular16, TextRegular14 } from 'components/common/Typo';
-import { IconButton, ICON_TYPE } from 'components/common/Icon';
+import { Icon, ICON_TYPE } from 'components/common/Icon';
 import { MediumButton } from 'components/common/Button';
 import useSearch from 'hooks/sales/useSearch';
 
@@ -41,7 +41,7 @@ const SearchTitle = () => {
           {['스컬킹2', '보드겟뚜', '뱅 2'].map((item, idx) => (
             <RecentSearch key={idx}>
               <TextRegular14 color="blackSalon500">{item}</TextRegular14>
-              <IconButton iconName={ICON_TYPE.close} color="blackSalon200" />
+              <Icon iconName={ICON_TYPE.close} color="blackSalon200" />
             </RecentSearch>
           ))}
         </Flex>
@@ -85,7 +85,7 @@ const SearchTitle = () => {
                   >
                     {item.text}
                   </TextRegular14>
-                  <IconButton
+                  <Icon
                     iconName={ICON_TYPE.close}
                     color="blackSalon200"
                     onClick={() => doDeleteRecentSearches(item.id)}

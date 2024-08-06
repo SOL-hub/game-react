@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Flex } from 'components/common/Layout';
-import { Icon, IconButton, ICON_TYPE } from 'components/common/Icon';
+import { Icon, ICON_TYPE } from 'components/common/Icon';
 import { CaptionRegular12 } from './Typo';
 
 interface InputProps {
@@ -145,7 +145,7 @@ export const IconInput = ({
     <Flex style={{ position: 'relative' }} width={width}>
       {isLeadingTrailing && (
         <LeadingIcon mode={mode}>
-          <IconButton
+          <Icon
             iconName={ICON_TYPE.search}
             color={doSetIconColor('black200')}
             onClick={() => leadingOnClick()}
@@ -153,7 +153,7 @@ export const IconInput = ({
         </LeadingIcon>
       )}
       <LeadingIcon mode={mode}>
-        <IconButton
+        <Icon
           iconName={isLeadingTrailing ? ICON_TYPE.closeCircle : ICON_TYPE.arrowV2Right}
           color={doSetIconColor('black100')}
           onClick={() => trailingOnClick()}

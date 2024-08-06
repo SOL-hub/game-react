@@ -64,6 +64,10 @@ export const CaptionRegular12 = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize[12]};
 `;
 
+export const CaptionBold12 = styled(CaptionRegular12)`
+  font-weight: 700;
+`;
+
 export const BodyRegular16 = styled(Text)`
   font-size: ${({ theme }) => theme.fontSize[16]};
   line-height: 150%;

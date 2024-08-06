@@ -10,7 +10,7 @@ import {
   CaptionRegular12,
 } from '../components/common/Typo';
 
-import { IconButton, ICON_TYPE } from '../components/common/Icon';
+import { Icon, ICON_TYPE } from '../components/common/Icon';
 
 import { Bedge } from '../components/common/Bedge';
 
@@ -53,7 +53,7 @@ const SalesDetail = () => {
             조회수 {data.userInterest.viewCount}회
           </CaptionRegular12>
           <Flex alignItems="center">
-            <IconButton
+            <Icon
               iconName={onLike ? ICON_TYPE.heartFill : ICON_TYPE.heartEmpty}
               color={onLike ? 'red500' : 'black300'}
               size={12}
