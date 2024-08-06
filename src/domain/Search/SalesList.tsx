@@ -20,8 +20,8 @@ const SalesList = () => {
   const [onLike, setOnLike] = useState(false);
 
   return (
-    <Flex column padding="1rem 1rem 0" onClick={() => navigate(`${PATH.SALES_DETAIL}/0`)}>
-      <Flex>
+    <Flex column padding="1rem 1rem 0">
+      <Flex style={{ cursor: 'pointer' }} onClick={() => navigate(`${PATH.SALES_DETAIL}/0`)}>
         <Flex style={{ position: 'relative' }}>
           <ThumbnailImage
             src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Elon_Musk_Royal_Society.jpg"

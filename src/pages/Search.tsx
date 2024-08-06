@@ -14,6 +14,7 @@ import LatestDropBox from 'domain/Search/LatestDropBox';
 import { Checkbox } from 'components/molecules/Checkbox';
 import useCheckbox from 'components/common/useCheckbox';
 import SalesList from 'domain/Search/SalesList';
+import BottomNavigation from 'components/template/BottomNavigation';
 
 const Search = () => {
   const {
@@ -130,6 +131,8 @@ const Search = () => {
           </Flex>
           <Divider2 />
         </Flex>
+        <SalesList />
+        <BottomNavigation />
       </Layout>
     </DefaultLayout>
   );

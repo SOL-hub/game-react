@@ -13,7 +13,7 @@ export interface IconProps {
 
 export const Icon = ({
   iconName,
-  size = 24,
+  size = iconName === ICON_TYPE.player ? 20 : 24,
   margin,
   color = 'black600',
   lineHeight,
