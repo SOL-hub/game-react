@@ -12,6 +12,7 @@ import {
 import { BedgeBox } from 'components/common/Bedge';
 import { Icon, ICON_TYPE } from 'components/common/Icon';
 import * as PATH from '../../utils/path';
+import { salesListDisplayTime } from 'utils/formatDate';
 
 const SalesList = ({ item }) => {
   const navigate = useNavigate();
@@ -21,11 +22,14 @@ const SalesList = ({ item }) => {
     reservation,
     title,
     salesPrice,
-    itemInfo: { koreanItemName, minPlayers, maxPlayers },
+    itemInfo: { koreanItemName, minPlayers, maxPlayers, audit },
     salesItemCondition: { almostNew },
     userInterest: { favoritesCount },
     salesPolicy: { directTradeLocation },
   } = item;
+
+  const { createdDateTime } = audit;
+
   const [onLike, setOnLike] = useState(false);
 
   return (
@@ -58,7 +62,7 @@ const SalesList = ({ item }) => {
                   새제품
                 </CaptionBold12>
               )}
-              <TextRegular14 color="black500">스플렌더</TextRegular14>
+              <TextRegular14 color="black500">{koreanItemName}</TextRegular14>
             </BedgeBox>
           </Flex>
           <Flex alignItems="center" margin="auto 0 0">
@@ -87,7 +91,7 @@ const SalesList = ({ item }) => {
             12
           </TextRegular14>
         </Flex>
-        {['강남구 삼성동', '8시간전'].map((item, idx) => (
+        {[directTradeLocation, salesListDisplayTime(createdDateTime)].map((item, idx) => (
           <CaptionRegular12
             key={idx}
             color="black300"
