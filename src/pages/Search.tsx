@@ -9,7 +9,7 @@ const Search = () => {
   const { searchResults } = useSearch();
 
   return (
-    <DefaultLayout>
+    <DefaultLayout padding="0 0 7.125rem">
       <SearchBanner />
       {searchResults.map((item, idx) => (
         <SalesList key={idx} item={item} />

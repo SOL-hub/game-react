@@ -11,7 +11,13 @@ const BootmNavigation = ({ current = GAME_SEARCH }) => {
 
   return (
     <BottomBox height="auto" padding="0 1.5rem 1.5rem">
-      <Card width="100%" height="5rem" padding="0.875rem 2rem" borderRadius="1rem">
+      <Card
+        width="100%"
+        height="5rem"
+        padding="0.875rem 2rem"
+        borderRadius="1rem"
+        background="black0"
+      >
         <Flex justifyContent="space-between" height="100%">
           {NAVI_DATA.map((item) => {
             const { id, icon, text, path } = item;
