@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { Flex, GrayBox } from 'components/common/Layout';
 import {
@@ -10,14 +11,16 @@ import {
 } from 'components/common/Typo';
 import { BedgeBox } from 'components/common/Bedge';
 import { Icon, ICON_TYPE } from 'components/common/Icon';
+import * as PATH from '../../utils/path';
 
 const SalesList = () => {
+  const navigate = useNavigate();
   const isNew = true;
   const isReservation = true;
   const [onLike, setOnLike] = useState(false);
 
   return (
-    <Flex column padding="1rem 1rem 0">
+    <Flex column padding="1rem 1rem 0" onClick={() => navigate(`${PATH.SALES_DETAIL}/0`)}>
       <Flex>
         <Flex style={{ position: 'relative' }}>
           <ThumbnailImage
