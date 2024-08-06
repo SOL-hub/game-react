@@ -21,23 +21,23 @@ export const LargeButton = styled.button<ButtonStyle>`
   margin: ${(props) => props.margin};
   border: ${(props) =>
     props.mode === OUTLINE_RED
-      ? `1px solid ${props.theme.color.redSalon500}`
+      ? `1px solid ${props.theme.color.red500}`
       : props.mode === OUTLINE_GRAY
-      ? `1px solid ${props.theme.color.blackSalon300}`
+      ? `1px solid ${props.theme.color.black300}`
       : 'none'};
   border-radius: 12px;
   background: ${(props) =>
     props.mode === MAIN
-      ? props.theme.color.redSalon500
+      ? props.theme.color.red500
       : props.mode === SOFT
-      ? props.theme.color.redSalon50
-      : props.theme.color.blackSalon100};
+      ? props.theme.color.red50
+      : props.theme.color.black0};
   color: ${(props) =>
     props.mode === MAIN
-      ? props.theme.color.blackSalon100
+      ? props.theme.color.black0
       : [OUTLINE_GRAY, TEXT].includes(props.mode)
-      ? props.theme.color.blackSalon600
-      : props.theme.color.redSalon500};
+      ? props.theme.color.black600
+      : props.theme.color.red500};
   font-size: 1.25rem; //20px
   font-weight: 700;
   white-space: nowrap;
@@ -45,14 +45,12 @@ export const LargeButton = styled.button<ButtonStyle>`
 
   &:disabled {
     background: ${(props) =>
-      props.mode === OUTLINE_GRAY
-        ? props.theme.color.blackSalon100
-        : props.theme.color.blackSalon50};
+      props.mode === OUTLINE_GRAY ? props.theme.color.black200 : props.theme.color.black200};
     border: ${(props) =>
       [OUTLINE_GRAY, OUTLINE_RED].includes(props.mode)
-        ? `1px solid ${props.theme.color.blackSalon200}`
+        ? `1px solid ${props.theme.color.black200}`
         : 'none'};
-    color: ${(props) => props.theme.color.blackSalon200};
+    color: ${(props) => props.theme.color.black200};
     cursor: not-allowed;
   }
 
@@ -60,12 +58,12 @@ export const LargeButton = styled.button<ButtonStyle>`
     &:hover {
       background: ${(props) =>
         props.mode === MAIN
-          ? props.theme.color.redSalon600
+          ? props.theme.color.red600
           : props.mode === SOFT
-          ? props.theme.color.redSalon100
+          ? props.theme.color.red100
           : props.mode === OUTLINE_RED
-          ? props.theme.color.redSalon50
-          : props.theme.color.blackSalon50};
+          ? props.theme.color.red50
+          : props.theme.color.black50};
     }
   }
 `;

@@ -4,7 +4,7 @@ import { GrayBox } from './Layout';
 export const Divider2 = styled(GrayBox)`
   height: 0.125rem;
   margin: 0.75rem 0;
-  background-color: ${(props) => props.theme.color.blackSalon100};
+  background-color: ${(props) => props.theme.color.black100};
 `;
 
 export const Divider4 = styled(GrayBox)`

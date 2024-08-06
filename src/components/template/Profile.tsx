@@ -32,5 +32,5 @@ const ProfileImage = styled.img`
 const ProfileBackground = styled(Circle)`
   width: 3.5rem;
   height: 3.5rem;
-  background: ${(props) => props.theme.color.blackSalon200};
+  background: ${(props) => props.theme.color.black200};
 `;

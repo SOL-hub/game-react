@@ -27,8 +27,8 @@ export const HeaderWithTitle = ({ title }: BarProps) => {
 };
 
 export const BarBackWithTitle = ({
-  colorBack = 'redSalon500',
-  colorTitle = 'blackSalon500',
+  colorBack = 'red500',
+  colorTitle = 'black500',
   title,
 }: BarProps) => {
   return (
@@ -48,8 +48,8 @@ export const BarBackWithTitle = ({
 };
 
 export const BarBackWithFavorites = ({
-  colorBack = 'redSalon500',
-  colorFavorites = 'redSalon500',
+  colorBack = 'red500',
+  colorFavorites = 'red500',
   isFavorites,
   onClick,
 }: BarProps) => {
@@ -71,11 +71,7 @@ export const BarBackWithFavorites = ({
   );
 };
 
-export const BarBackWithComponent = ({
-  colorBack = 'blackSalon600',
-  padding,
-  children,
-}: BarProps) => {
+export const BarBackWithComponent = ({ colorBack = 'black600', padding, children }: BarProps) => {
   return (
     <Header>
       <Flex alignItems="center" width="100%" height="100%" padding={padding}>
@@ -94,5 +90,5 @@ export const BarBackWithComponent = ({
 export const Header = styled.header`
   width: 100%;
   height: 3.75rem; //60px
-  background: ${(props) => props.theme.color.blackSalon0};
+  background: ${(props) => props.theme.color.black0};
 `;

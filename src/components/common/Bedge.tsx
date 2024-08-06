@@ -12,7 +12,7 @@ const BedgeBox = styled(Flex)`
   border-radius: 0.25rem;
   background: ${(props) =>
     props.theme.color[props.background as keyof typeof props.theme.color] ||
-    props.theme.color.blackSalon50};
+    props.theme.color.black50};
 
   &:last-child {
     margin: 0;
@@ -32,7 +32,7 @@ type BedgeProps = {
 export const Bedge = ({ children }: BedgeProps) => {
   return (
     <BedgeBox height="1.563rem">
-      <TextRegular16 color="blackSalon500">#{children}</TextRegular16>
+      <TextRegular16 color="black500">#{children}</TextRegular16>
     </BedgeBox>
   );
 };
@@ -40,15 +40,15 @@ export const Bedge = ({ children }: BedgeProps) => {
 export const BedgeHashtag = ({ children }: BedgeProps) => {
   return (
     <BedgeBox height="1.688rem">
-      <TextRegular16 color="blackSalon500">#{children}</TextRegular16>
+      <TextRegular16 color="black500">#{children}</TextRegular16>
     </BedgeBox>
   );
 };
 
 export const RedBedge = ({ children }: BedgeProps) => {
   return (
-    <BedgeBox padding="0.25rem 0.75rem" margin="0" height="1.688rem" background="redSalon50">
-      <TextBold16 color="redSalon500">{children}</TextBold16>
+    <BedgeBox padding="0.25rem 0.75rem" margin="0" height="1.688rem" background="black500">
+      <TextBold16 color="black500">{children}</TextBold16>
     </BedgeBox>
   );
 };

@@ -14,8 +14,7 @@ export const Text = styled.div<TypoStyle>`
   {...style}
   margin: ${(props) => props.margin};
   color: ${(props) =>
-    props.theme.color[props.color as keyof typeof props.theme.color] ||
-    props.theme.color.blackSalon600};
+    props.theme.color[props.color as keyof typeof props.theme.color] || props.theme.color.black600};
  font-size: ${(props) => props.theme.fontSize[props.size as keyof typeof props.theme.fontSize]};
   font-weight: ${({ bold }) => (bold ? 700 : 400)};
   line-height: ${(props) => props.lineHeight};

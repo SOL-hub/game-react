@@ -2,10 +2,12 @@ import React from 'react';
 import { Flex } from 'components/common/Layout';
 import { InputCheckbox } from 'components/common/InputCheckbox';
 import { color } from 'styles/ThemeStyle';
+import { Text } from 'components/common/Typo';
 
 interface CheckboxProps {
   id?: string;
   label?: string;
+  checked?: boolean;
   secondary?: boolean;
   size?: 14 | 16;
   margin?: string;
@@ -13,12 +15,13 @@ interface CheckboxProps {
 }
 
 export const Checkbox = ({
-  id,
+  id = '',
   label,
+  checked,
+  onChange = () => {},
   secondary = false,
   size = 16,
   margin,
-  onChange = () => {},
 }: CheckboxProps) => {
   return (
     <Flex alignItems="center" margin={margin}>
@@ -26,11 +29,15 @@ export const Checkbox = ({
         type="checkbox"
         id={id}
         size={size}
-        defaultColor={color.blackSalon200}
-        selectedColor={secondary ? color.blackSalon600 : color.redSalon500}
+        selectedColor={secondary ? 'black600' : 'red500'}
+        checked={checked}
         onChange={onChange}
       />
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>
+        <Text margin="0.15rem 0 0 0.25rem" size={size} color={`black${checked ? 6 : 4}00`}>
+          {label}
+        </Text>
+      </label>
     </Flex>
   );
 };

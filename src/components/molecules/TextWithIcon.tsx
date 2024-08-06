@@ -9,7 +9,7 @@ export const TextWithIconButton = ({ text, iconData, onClick }) => {
       <TextRegular14 margin="0.15rem 0.625rem 0 0">{text}</TextRegular14>
       <IconButton
         iconName={iconData.iconName}
-        color={iconData.color ? iconData.color : 'blackSalon400'}
+        color={iconData.color ? iconData.color : 'black400'}
         onClick={onClick}
       />
     </Flex>

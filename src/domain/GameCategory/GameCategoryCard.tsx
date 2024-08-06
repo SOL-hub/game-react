@@ -24,13 +24,13 @@ const GameCategoryCard = ({
         <HeadRegular18>{representCategoryKoreanName}</HeadRegular18>
         <IconButton
           iconName={isActive ? ICON_TYPE.arrowV1Up : ICON_TYPE.arrowV1Down}
-          color="redSalon500"
+          color="red500"
           onClick={() => setCurrentName(isActive ? '' : representCategoryName)}
         />
       </Flex>
-      <BodyRegular15 color="blackSalon500">{summarization}</BodyRegular15>
+      <BodyRegular15 color="black500">{summarization}</BodyRegular15>
       {isActive && (
-        <BodyRegular15 color="blackSalon400" margin="1rem 0 0">
+        <BodyRegular15 color="black400" margin="1rem 0 0">
           {description}
         </BodyRegular15>
       )}

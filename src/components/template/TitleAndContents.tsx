@@ -23,8 +23,8 @@ export const TitleWithRedBedge = ({ title, contents, margin }: componentsProps) 
 export const GreyTitleWithContents = ({ title, contents, margin }: componentsProps) => {
   return (
     <TitleWithContentsBox margin={margin}>
-      <TextRegular16 color="blackSalon300">{title}</TextRegular16>
-      <TextRegular16 color="blackSalon500">{contents}</TextRegular16>
+      <TextRegular16 color="black300">{title}</TextRegular16>
+      <TextRegular16 color="black500">{contents}</TextRegular16>
     </TitleWithContentsBox>
   );
 };

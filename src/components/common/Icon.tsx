@@ -12,7 +12,7 @@ export interface IconProps {
   onClick?: () => void;
 }
 
-export const Icon = ({ iconName, size = 24, color = 'blackSalon600' }: IconProps) => {
+export const Icon = ({ iconName, size = 24, color = 'black600' }: IconProps) => {
   return (
     <svg
       width={size}
@@ -29,7 +29,7 @@ export const Icon = ({ iconName, size = 24, color = 'blackSalon600' }: IconProps
 export const IconButton = ({
   iconName,
   size = 24,
-  color = 'blackSalon600',
+  color = 'black600',
   margin,
   lineHeight,
   onClick,

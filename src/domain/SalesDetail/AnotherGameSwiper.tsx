@@ -44,7 +44,7 @@ export const AnotherGameCard = ({ data }: dataProps) => {
         <GameName>{itemName}</GameName>
         <SalesTitle>{title}</SalesTitle>
       </Flex>
-      <TextBold16 margin="0 0 0 auto" color="redSalon500">
+      <TextBold16 margin="0 0 0 auto" color="red500">
         {salesPrice.toLocaleString()}원
       </TextBold16>
     </Flex>
@@ -67,7 +67,7 @@ const ThumbnailImage = styled.img`
 const GameName = styled(TextBold16)`
   display: block;
   width: 7.5rem;
-  color: ${(props) => props.theme.color.blackSalon500};
+  color: ${(props) => props.theme.color.black500};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -75,6 +75,6 @@ const GameName = styled(TextBold16)`
 
 const SalesTitle = styled(GameName)`
   margin: 0.5rem 0 0;
-  color: ${(props) => props.theme.color.blackSalon400};
+  color: ${(props) => props.theme.color.black400};
   font-weight: 400;
 `;

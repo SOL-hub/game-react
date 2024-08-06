@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 interface InputStyle {
   size: number;
-  defaultColor: string;
   selectedColor: string;
 }
 
@@ -29,9 +28,12 @@ export const InputCheckbox = styled.input<InputStyle>`
   width: 1.5rem;
   height: 1.5rem;
   background-image: ${(props) =>
-    `url(${setDefaultCheckbox(props.size, strokeColor(props.defaultColor))})`};
+    `url(${setDefaultCheckbox(props.size, strokeColor(props.theme.color.black200))})`};
   :checked {
     background-image: ${(props) =>
-      `url(${setSelectedCheckbox(props.size, strokeColor(props.selectedColor))})`};
+      `url(${setSelectedCheckbox(
+        props.size,
+        strokeColor(props.theme.color[props.selectedColor as keyof typeof props.theme.color]),
+      )})`};
   }
 `;

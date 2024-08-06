@@ -81,7 +81,7 @@ export const GrayBox = styled(Flex)`
   height: ${({ height }) => height || '0.75rem'};
   background: ${(props) =>
     props.theme.color[props.background as keyof typeof props.theme.color] ||
-    props.theme.color.blackSalon50};
+    props.theme.color.black50};
 `;
 
 export const BottomBox = styled(Flex)`

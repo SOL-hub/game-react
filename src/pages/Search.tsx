@@ -11,6 +11,8 @@ import { TextChip } from 'components/common/Chip';
 import { Divider2 } from 'components/common/Divider';
 import SearchFilter from 'domain/Search/SearchFilter';
 import LatestDropBox from 'domain/Search/LatestDropBox';
+import { Checkbox } from 'components/molecules/Checkbox';
+import useCheckbox from 'components/common/useCheckbox';
 
 const Search = () => {
   const {
@@ -21,6 +23,8 @@ const Search = () => {
     doDeleteRecentSearches,
     relatedSearches,
   } = useSearch();
+
+  const { checkboxValue, onChangeCheckbox } = useCheckbox(false);
 
   console.log(recentSearches.slice(0, 3));
 
@@ -44,15 +48,15 @@ const Search = () => {
           <SearchTitle margin="0 0 0.5rem">최근 검색어</SearchTitle>
           {['스컬킹2', '보드겟뚜', '뱅 2'].map((item, idx) => (
             <RecentSearch key={idx}>
-              <TextRegular14 color="blackSalon500">{item}</TextRegular14>
-              <IconButton iconName={ICON_TYPE.close} color="blackSalon200" />
+              <TextRegular14 color="black500">{item}</TextRegular14>
+              <IconButton iconName={ICON_TYPE.close} color="black200" />
             </RecentSearch>
           ))}
         </Flex>
         <Flex padding="0.5rem 0 2rem">
           <SearchTitle margin="0 0 0.5rem">연관 검색어</SearchTitle>
           {['스컬킹2', '보드겟뚜', '뱅 2'].map((item, idx) => (
-            <TextRegular14 margin=" 0.5rem 0" lineHeight="17px" color="blackSalon500" key={idx}>
+            <TextRegular14 margin=" 0.5rem 0" lineHeight="17px" color="black500" key={idx}>
               {item}
             </TextRegular14>
           ))}
@@ -71,7 +75,7 @@ const Search = () => {
                   key={idx}
                   margin=" 0.5rem 0"
                   lineHeight="17px"
-                  color="blackSalon500"
+                  color="black500"
                   onClick={() => console.log(`클릭 시 선택한 연관검색어가 검색됨`)}
                 >
                   {item}
@@ -84,14 +88,14 @@ const Search = () => {
               {recentSearches.slice(0, 3).map((item, idx) => (
                 <RecentSearch key={idx}>
                   <TextRegular14
-                    color="blackSalon500"
+                    color="black500"
                     onClick={() => console.log(`클릭시 ${item.text} 검색됨 `)}
                   >
                     {item.text}
                   </TextRegular14>
                   <IconButton
                     iconName={ICON_TYPE.close}
-                    color="blackSalon200"
+                    color="black200"
                     onClick={() => doDeleteRecentSearches(item.id)}
                   />
                 </RecentSearch>
@@ -102,7 +106,7 @@ const Search = () => {
       </Layout>
       <Layout padding="0">
         <Flex padding="1rem 1.5rem 0.5rem" alignItems="center">
-          <TextBold14 color="redSalon500">연관검색</TextBold14>
+          <TextBold14 color="red500">연관검색</TextBold14>
           {relatedSearches.slice(0, 3).map((item, idx) => (
             <TextChip key={idx} margin="0 0 0 0.875rem">
               {item}
@@ -115,6 +119,13 @@ const Search = () => {
           <Flex padding="0.625rem 1.5rem">
             <LatestDropBox />
             <SearchFilter />
+            <Checkbox
+              id="new"
+              label="새 제품만 보기"
+              margin="0 0 0 auto"
+              checked={checkboxValue}
+              onChange={onChangeCheckbox}
+            />
           </Flex>
           <Divider2 />
         </Flex>
@@ -127,7 +138,7 @@ export default Search;
 
 const SearchTitle = styled(TextRegular16)`
   margin: ${(props) => props.margin || '0 0 1rem'};
-  color: ${(props) => props.theme.color.blackSalon300};
+  color: ${(props) => props.theme.color.black300};
 `;
 
 const RecentSearch = styled(Flex)`

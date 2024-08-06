@@ -35,7 +35,7 @@ const Home = () => {
   return (
     <DefaultLayout>
       <HeaderWithTitle title="해더" />
-      <Layout background="redSalon50">
+      <Layout background="red50">
         <LargeButton mode="main" onClick={() => navigate(`${PATH.SALES_DETAIL}/0`)}>
           상세뷰로 이동
         </LargeButton>
@@ -92,16 +92,16 @@ const Home = () => {
         />
         <Icon iconName={ICON_TYPE.arrowV1Right} />
         <Icon iconName={ICON_TYPE.heartEmpty} size={50} />
-        <Icon iconName={ICON_TYPE.heartFill} size={50} color="redSalon500" />
+        <Icon iconName={ICON_TYPE.heartFill} size={50} color="red500" />
         <IconButton
           iconName={ICON_TYPE.heartFill}
           size={50}
-          color="redSalon100"
+          color="red100"
           onClick={() => console.log('iconButton')}
         />
         <IconButton
           iconName={ICON_TYPE.heartFill}
-          color="redSalon200"
+          color="red200"
           onClick={() => console.log('iconButton')}
           margin="2rem"
         />

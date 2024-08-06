@@ -104,7 +104,7 @@ export default SearchTitle;
 
 const SearchTitleTitle = styled(TextRegular16)`
   margin: ${(props) => props.margin || '0 0 1rem'};
-  color: ${(props) => props.theme.color.blackSalon300};
+  color: ${(props) => props.theme.color.black300};
 `;
 
 const RecentSearch = styled(Flex)`
