@@ -6,7 +6,7 @@ import React from 'react';
 import { TextRegular16, TextRegular14 } from 'components/common/Typo';
 import { Icon, ICON_TYPE } from 'components/common/Icon';
 import { MediumButton } from 'components/common/Button';
-import useSearch from 'hooks/sales/useSearch';
+import useSearch from 'hooks/search/useSearch';
 
 const SearchTitle = () => {
   const {

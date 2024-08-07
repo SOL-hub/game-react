@@ -7,6 +7,8 @@ const useSearch = () => {
   );
   const [relatedSearches, setRelatedSearches] = useState(['뱅', '스플렌더', '할리갈리']); // 테스트용
   const [searchResults, setSearchResults] = useState(SEARCH_RESULTS_MOCK);
+  const [totalPages, setTotalPages] = useState(8);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const doSearch = () => {
     const newSearch = { id: Date.now(), text: searchValue };
@@ -28,6 +30,9 @@ const useSearch = () => {
     setSearchValue,
     recentSearches,
     searchResults,
+    totalPages,
+    currentPage,
+    setCurrentPage,
     doSearch,
     doDeleteRecentSearches,
     relatedSearches,
