@@ -101,7 +101,7 @@ const SalesList = ({ item }) => {
           </CaptionRegular12>
         ))}
       </Flex>
-      <GrayBox height="0.125rem" margin="0.5rem 0 0" color="black100" />
+      <GrayBox height="0.125rem" margin="0.5rem 0 0" background={100} />
     </Flex>
   );
 };

@@ -18,7 +18,7 @@ interface LayoutStyle {
   border?: string;
   borderRadius?: string;
   borderWidth?: string;
-  background?: string;
+  background?: string | number;
   backgroundImage?: string;
   zIndex?: number;
   isMaintain?: boolean;
@@ -79,9 +79,7 @@ export const Card = styled(Flex)`
 export const GrayBox = styled(Flex)`
   width: 100%;
   height: ${({ height }) => height || '0.75rem'};
-  background: ${(props) =>
-    props.theme.color[props.background as keyof typeof props.theme.color] ||
-    props.theme.color.black50};
+  background: ${(props) => props.theme.color[`black${props.background as number | 50}`]};
 `;
 
 export const BottomBox = styled(Flex)`

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarBackWithTitle } from 'components/template/Bar';
-import { DefaultLayout, Layout, BottomBox } from 'components/atom/Layout';
+import { DefaultLayout, Layout, BottomBox, GrayBox } from 'components/atom/Layout';
 import { TextRegular14 } from 'components/atom/Typo';
 import RegistrationButton from 'domain/GameRegistration/RegistrationButton';
 import ImageUploader from 'domain/GameRegistration/ImageUploader';
@@ -26,6 +26,7 @@ const GameRegistration = () => {
       <Layout padding="5.25rem 1.5rem 1.875rem">
         <ImageUploader />
       </Layout>
+      <GrayBox height="1px" background={100} />
       <BottomBox>
         <RegistrationButton registrationProgress={registrationProgress} isCompleted={isCompleted} />
       </BottomBox>
