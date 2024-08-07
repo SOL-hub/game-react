@@ -1,9 +1,12 @@
 import axios from 'axios';
 
-interface apiProps {
-  itemId?: number;
+const BACKEND_URL = 'http://localhost:3000';
+interface ApiProps {
+  id?: number;
 }
 
-export const getSalesItemApi = ({ itemId }: apiProps) => axios.get(`/sales-item/${itemId}`);
+// /api/products?page=${page}&size=10
 
-export const getRepresentCategoryApi = () => axios.get('/represent-category');
+export const getSalesItemApi = ({ id }: ApiProps) => axios.get(`${BACKEND_URL}/products/${id}`);
+
+export const getRepresentCategoryApi = () => axios.get(`${BACKEND_URL}`);

@@ -1,6 +1,11 @@
 export const HOME = '/';
+export const SEARCH = '/search';
 export const TEST = '/test';
 export const CATEGORYEXPLAIN = '/categoryExplain';
 export const SALES_DETAIL = '/sales/detail';
 export const GAME_CATEGORY = '/game-category';
+export const GAME_REGISTRATION = '/game-ragistration';
 export const SALES_INTRO = '/search';
+export const SALES_REGISTRATION = '/sales/registration';
+export const MYPAGE = '/mypage';
+export const LOGIN = '/login';

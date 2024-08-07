@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex } from '../../components/common/Layout';
-import { RedBedge } from '../../components/common/Bedge';
-import { TextBold16, TextRegular16 } from '../../components/common/Typo';
+import { Flex } from '../atom/Layout';
+import { RedBedge } from '../atom/Bedge';
+import { TextBold16, TextRegular16 } from '../atom/Typo';
 
 type componentsProps = {
   margin?: string;
@@ -23,8 +23,8 @@ export const TitleWithRedBedge = ({ title, contents, margin }: componentsProps) 
 export const GreyTitleWithContents = ({ title, contents, margin }: componentsProps) => {
   return (
     <TitleWithContentsBox margin={margin}>
-      <TextRegular16 color="blackSalon300">{title}</TextRegular16>
-      <TextRegular16 color="blackSalon500">{contents}</TextRegular16>
+      <TextRegular16 color="black300">{title}</TextRegular16>
+      <TextRegular16 color="black500">{contents}</TextRegular16>
     </TitleWithContentsBox>
   );
 };

@@ -18,7 +18,7 @@ interface LayoutStyle {
   border?: string;
   borderRadius?: string;
   borderWidth?: string;
-  background?: string;
+  background?: string | number;
   backgroundImage?: string;
   zIndex?: number;
   isMaintain?: boolean;
@@ -26,7 +26,7 @@ interface LayoutStyle {
 
 export const DefaultLayout = styled.section<LayoutStyle>`
   width: 100%;
-  max-width: 26.75rem; /* 428px */
+  max-width: ${({ theme }) => theme.mediaSize.breakPoint};
   min-height: 100vh;
   padding: ${(props) => props.padding || '0 0 5rem'};
   margin: 0 auto;
@@ -79,16 +79,14 @@ export const Card = styled(Flex)`
 export const GrayBox = styled(Flex)`
   width: 100%;
   height: ${({ height }) => height || '0.75rem'};
-  background: ${(props) =>
-    props.theme.color[props.background as keyof typeof props.theme.color] ||
-    props.theme.color.blackSalon50};
+  background: ${(props) => props.theme.color[`black${props.background as number | 50}`]};
 `;
 
 export const BottomBox = styled(Flex)`
   position: fixed;
   bottom: 0;
   width: 100%;
-  max-width: 26.75rem;
+  max-width: ${({ theme }) => theme.mediaSize.breakPoint};
   height: ${(props) => props.height || '4.5rem'};
   z-index: ${(props) => props.zIndex || 10};
 `;

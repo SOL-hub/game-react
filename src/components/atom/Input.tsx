@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Flex } from 'components/common/Layout';
-import { Icon, IconButton, ICON_TYPE } from 'components/common/Icon';
+import { Flex } from 'components/atom/Layout';
+import { Icon, ICON_TYPE } from 'components/atom/Icon';
 import { CaptionRegular12 } from './Typo';
 
 interface InputProps {
@@ -63,22 +63,28 @@ export const Input = styled.input<InputProps>`
   height: ${(props) => setSize(props.mode, '3.25rem', '2.75rem', '100%')};
   padding: ${(props) => setPadding(props.mode, props.iconType)};
   border: ${(props) =>
-    `1px solid ${props.isError ? props.theme.color.error500 : props.theme.color.blackSalon100}`};
+    `1px solid ${
+      props.isError
+        ? props.theme.color.error500
+        : props.value !== ''
+        ? props.theme.color.red300
+        : props.theme.color.black100
+    }`};
   border-radius: 0.5rem;
-  color: ${(props) => props.theme.color.blackSalon600};
+  color: ${(props) => props.theme.color.black600};
   font-size: ${(props) => setSize(props.mode, '1rem', '0.875rem', 'inherit')};
   font-weight: 400;
   letter-spacing: -0.3px;
   &::placeholder {
-    color: ${(props) => props.theme.color.blackSalon200};
+    color: ${(props) => props.theme.color.black200};
   }
   &:focus {
     border-color: ${(props) =>
-      props.isError ? props.theme.color.error500 : props.theme.color.redSalon300};
+      props.isError ? props.theme.color.error500 : props.theme.color.red300};
     outline: none;
   }
   &:disabled {
-    background: ${(props) => props.theme.color.blackSalon50};
+    background: ${(props) => props.theme.color.black50};
   }
 `;
 
@@ -131,7 +137,7 @@ export const IconInput = ({
 }: InputProps) => {
   const [isFocus, setIsFocus] = useState(false);
 
-  const doSetIconColor = (color) => (isFocus ? 'redSalon300' : isError ? 'error500' : color);
+  const doSetIconColor = (color) => (isFocus ? 'red300' : isError ? 'error500' : color);
 
   const isLeadingTrailing = iconType === INPUT_ICON_TYPE.leadingTrailingIcon;
 
@@ -139,22 +145,22 @@ export const IconInput = ({
     <Flex style={{ position: 'relative' }} width={width}>
       {isLeadingTrailing && (
         <LeadingIcon mode={mode}>
-          <IconButton
+          <Icon
             iconName={ICON_TYPE.search}
-            color={doSetIconColor('blackSalon200')}
+            color={doSetIconColor('black200')}
             onClick={() => leadingOnClick()}
           />
         </LeadingIcon>
       )}
       <LeadingIcon mode={mode}>
-        <IconButton
+        <Icon
           iconName={isLeadingTrailing ? ICON_TYPE.closeCircle : ICON_TYPE.arrowV2Right}
-          color={doSetIconColor('blackSalon100')}
+          color={doSetIconColor('black100')}
           onClick={() => trailingOnClick()}
         />
       </LeadingIcon>
       <TrailingIcon mode={mode}>
-        <Icon iconName={ICON_TYPE.closeCircle} color={doSetIconColor('blackSalon100')} />
+        <Icon iconName={ICON_TYPE.closeCircle} color={doSetIconColor('black100')} />
       </TrailingIcon>
       <DefaultInput
         mode={mode}

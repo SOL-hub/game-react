@@ -1,4 +1,4 @@
-import { IconProps } from '../components/common/Icon';
+import { IconProps } from '../components/atom/Icon';
 import { color as themeColor } from '../styles/ThemeStyle';
 
 export type ICON_NAME_TYPE = (typeof ICON_NAME)[keyof typeof ICON_NAME];
@@ -13,6 +13,20 @@ export const ICON_NAME = {
   search: 'search',
   closeCircle: 'closeCircle',
   close: 'close',
+  filter: 'filter',
+  player: 'player',
+  plus: 'plus',
+  camera: 'camera',
+  largeUnselectedRadio: 'largeUnselectedRadio',
+  largeSelectedRadio: 'largeSelectedRadio',
+  moreVertical: 'moreVertical',
+  trash: 'trash',
+  edit: 'edit',
+  alertCircle: 'alertCircle',
+  check: 'check',
+  divideCircle: 'divideCircle',
+  lock: 'lock',
+  unlock: 'unlock',
 } as const;
 
 export const getIconSVGPath = ({ iconName, color }: IconProps) => {
@@ -119,6 +133,186 @@ export const getIconSVGPath = ({ iconName, color }: IconProps) => {
           stroke-linejoin="round"
         />
       );
+    case ICON_NAME.filter:
+      return (
+        <>
+          <circle cx="16.2857" cy="15.4285" r="3.28571" stroke={colorValue} stroke-width="2" />
+          <circle cx="7.7143" cy="8.28571" r="3.28571" stroke={colorValue} stroke-width="2" />
+          <path d="M2 8.28613H4" stroke={colorValue} stroke-width="2" stroke-linecap="round" />
+          <path
+            d="M2 15.2861H13.0009"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M11 8.28613L22 8.28613"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+          <path
+            d="M20 15.2861L22 15.2861"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </>
+      );
+
+    case ICON_NAME.player:
+      return (
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M12.1122 9.58399C13.429 8.92937 14.3339 7.57037 14.3339 6C14.3339 3.79086 12.5431 2 10.3339 2C8.1248 2 6.33394 3.79086 6.33394 6C6.33394 7.56893 7.23722 8.92689 8.55211 9.5822L5.13547 15.5C4.75057 16.1667 5.23169 17 6.00149 17H14.6617C15.4315 17 15.9127 16.1667 15.5278 15.5L12.1122 9.58399Z"
+          fill={colorValue}
+        />
+      );
+    case ICON_NAME.plus:
+      return (
+        <path
+          d="M12 5V19M5 12H19"
+          stroke={colorValue}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      );
+    case ICON_NAME.camera:
+      return (
+        <>
+          <path
+            d="M23 19C23 19.5304 22.7893 20.0391 22.4142 20.4142C22.0391 20.7893 21.5304 21 21 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V8C1 7.46957 1.21071 6.96086 1.58579 6.58579C1.96086 6.21071 2.46957 6 3 6H7L9 3H15L17 6H21C21.5304 6 22.0391 6.21071 22.4142 6.58579C22.7893 6.96086 23 7.46957 23 8V19Z"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 17C14.2091 17 16 15.2091 16 13C16 10.7909 14.2091 9 12 9C9.79086 9 8 10.7909 8 13C8 15.2091 9.79086 17 12 17Z"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </>
+      );
+    case ICON_NAME.largeUnselectedRadio:
+      return (
+        <path
+          d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+          stroke={colorValue}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      );
+    case ICON_NAME.largeSelectedRadio:
+      return (
+        <>
+          <path
+            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <circle cx="12" cy="12" r="7" fill={colorValue} />
+        </>
+      );
+    case ICON_NAME.moreVertical:
+      return (
+        <>
+          <path
+            d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </>
+      );
+    case ICON_NAME.trash:
+      return (
+        <path
+          d="M3 6H5M5 6H21M5 6V20C5 20.5304 5.21071 21.0391 5.58579 21.4142C5.96086 21.7893 6.46957 22 7 22H17C17.5304 22 18.0391 21.7893 18.4142 21.4142C18.7893 21.0391 19 20.5304 19 20V6H5ZM8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M10 11V17M14 11V17"
+          stroke={colorValue}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      );
+    case ICON_NAME.edit:
+      return (
+        <path
+          d="M11 3.99998H4C3.46957 3.99998 2.96086 4.2107 2.58579 4.58577C2.21071 4.96084 2 5.46955 2 5.99998V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z"
+          stroke={colorValue}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      );
+    case ICON_NAME.alertCircle:
+      return (
+        <path
+          d="M12 8V12M12 16H12.01M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+          stroke={colorValue}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      );
+    case ICON_NAME.check:
+      return (
+        <>
+          <circle cx="12" cy="12" r="10" stroke={colorValue} stroke-width="2" />
+          <path
+            d="M7 12L11 15L17 8"
+            stroke={colorValue}
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </>
+      );
+    case ICON_NAME.divideCircle:
+      return (
+        <path
+          d="M8 12H16M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+          stroke={colorValue}
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      );
+    case ICON_NAME.lock:
+      return (
+        <>
+          <rect x="3" y="11" width="18" height="10" rx="2" stroke={colorValue} stroke-width="2" />
+          <path
+            d="M7 8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V11H7V8Z"
+            stroke={colorValue}
+            stroke-width="2"
+          />
+          <rect x="11" y="14" width="2" height="4" rx="1" fill={colorValue} />
+        </>
+      );
+    case ICON_NAME.unlock:
     default:
       return;
   }

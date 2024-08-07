@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
-import { Flex } from 'components/common/Layout';
+import { Flex } from 'components/atom/Layout';
 
 interface swiperProps {
   data: any;
@@ -68,10 +68,10 @@ const SwiperContainer = styled.div`
     .swiper-pagination {
       bottom: 0.75rem;
       .swiper-pagination-bullet-active.swiper-pagination-bullet {
-        background: ${(props) => props.theme.color.redSalon300};
+        background: ${(props) => props.theme.color.red300};
       }
       .swiper-pagination-bullet {
-        background: ${(props) => props.theme.color.blackSalon100};
+        background: ${(props) => props.theme.color.black100};
         opacity: 1;
       }
     }
@@ -89,7 +89,7 @@ const SwiperFraction = styled(Flex)`
   padding: 0 0.5rem;
   background: rgba(27, 23, 23, 0.5);
   border-radius: 0.5rem;
-  color: ${(props) => props.theme.color.blackSalon0};
+  color: ${(props) => props.theme.color.black0};
   font-size: 14px;
   line-height: 17px;
   z-index: 100;

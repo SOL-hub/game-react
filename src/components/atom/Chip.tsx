@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex } from './Layout';
 import { TextRegular14 } from './Typo';
+import { Flex } from './Layout';
 
 interface ChipProps {
   margin?: string;
@@ -11,7 +11,7 @@ interface ChipProps {
 
 export const TextChip = ({ margin = '0', selected, children }: ChipProps) => {
   return (
-    <ChipBox>
+    <ChipBox background={selected ? 'black50' : 'none'} margin={margin}>
       <TextRegular14>{children}</TextRegular14>
     </ChipBox>
   );

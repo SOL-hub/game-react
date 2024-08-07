@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TextBold16 } from '../common/Typo';
-import { Flex, Circle } from 'components/common/Layout';
-import { BedgeCertification } from 'components/common/Bedge';
+import { TextBold16 } from '../atom/Typo';
+import { Flex, Circle } from 'components/atom/Layout';
+import { BedgeCertification } from 'components/atom/Bedge';
 
 const Profile = ({ data }: any) => {
   const { name, profileImage, identified } = data;
@@ -32,5 +32,5 @@ const ProfileImage = styled.img`
 const ProfileBackground = styled(Circle)`
   width: 3.5rem;
   height: 3.5rem;
-  background: ${(props) => props.theme.color.blackSalon200};
+  background: ${(props) => props.theme.color.black200};
 `;

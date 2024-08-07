@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DefaultLayout, Layout, Flex, GrayBox, BottomBox } from '../components/common/Layout';
-import { BarBackWithFavorites } from '../components/common/Bar';
+import { DefaultLayout, Layout, Flex, GrayBox, BottomBox } from '../components/atom/Layout';
+import { BarBackWithFavorites } from '../components/template/Bar';
 import {
   HeadBold20,
   HeadBold18,
   TextRegular16,
   TextBold14,
   CaptionRegular12,
-} from '../components/common/Typo';
+} from '../components/atom/Typo';
 
-import { IconButton, ICON_TYPE } from '../components/common/Icon';
+import { Icon, ICON_TYPE } from '../components/atom/Icon';
 
-import { Bedge } from '../components/common/Bedge';
+import { Bedge } from '../components/atom/Bedge';
 
 import SalesPhotoSwiper from '../domain/SalesDetail/SalesPhotoSwiper';
 import Profile from '../components/template/Profile';
@@ -46,28 +46,28 @@ const SalesDetail = () => {
           <HeadBold20 lineHeight="24px">{data.title}</HeadBold20>
         </Flex>
         <Flex>
-          <CaptionRegular12 color="blackSalon300" lineHeight="19px" margin="0 0.75rem 0 0">
+          <CaptionRegular12 color="black300" lineHeight="19px" margin="0 0.75rem 0 0">
             {data.audit.createdDateTime.split(' ')[0].replace(/-/g, '.')}
           </CaptionRegular12>
-          <CaptionRegular12 color="blackSalon300" lineHeight="19px" margin="0 0.75rem 0 0">
+          <CaptionRegular12 color="black300" lineHeight="19px" margin="0 0.75rem 0 0">
             조회수 {data.userInterest.viewCount}회
           </CaptionRegular12>
           <Flex alignItems="center">
-            <IconButton
+            <Icon
               iconName={onLike ? ICON_TYPE.heartFill : ICON_TYPE.heartEmpty}
-              color={onLike ? 'redSalon500' : 'blackSalon300'}
+              color={onLike ? 'red500' : 'black300'}
               size={12}
               margin="0 0.25rem 0 0"
               lineHeight="19px"
               onClick={() => setOnLike(!onLike)}
             />
-            <CaptionRegular12 color="blackSalon300" lineHeight="19px" margin="0 0.75rem 0 0">
+            <CaptionRegular12 color="black300" lineHeight="19px" margin="0 0.75rem 0 0">
               {data.userInterest.favoritesCount}
             </CaptionRegular12>
           </Flex>
         </Flex>
         <Flex column margin="2rem 0 1.5rem">
-          <TextRegular16 color="blackSalon500">판매자 정책</TextRegular16>
+          <TextRegular16 color="black500">판매자 정책</TextRegular16>
           <Flex margin="1rem 0 0 0">
             {doGetSalesPolicy().map((data: string, idx: number) => (
               <Bedge key={idx}>{data}</Bedge>
@@ -81,10 +81,8 @@ const SalesDetail = () => {
           border="1px solid #E8E8E8"
           borderWidth="0 0 1px"
         >
-          <TextRegular16 color="blackSalon500">거래 가능 주소</TextRegular16>
-          <TextRegular16 color="blackSalon400">
-            {data.salesPolicy.directTradeLocation}
-          </TextRegular16>
+          <TextRegular16 color="black500">거래 가능 주소</TextRegular16>
+          <TextRegular16 color="black400">{data.salesPolicy.directTradeLocation}</TextRegular16>
         </Flex>
       </Layout>
       <Layout padding="0 1rem">
@@ -106,17 +104,17 @@ const SalesDetail = () => {
       )}
       {data.itemInfo.knownLowestPrice && (
         <LowestPriceBox>
-          <TextBold14 color="blackSalon0">
+          <TextBold14 color="black0">
             가격비교 현재 최저가 {data.itemInfo.knownLowestPrice.toLocaleString()}원
           </TextBold14>
         </LowestPriceBox>
       )}
       <BottomBox>
         <SalesPrice>
-          <HeadBold20 color="redSalon400">{data.salesPrice.toLocaleString()}원</HeadBold20>
+          <HeadBold20 color="red400">{data.salesPrice.toLocaleString()}원</HeadBold20>
         </SalesPrice>
         <TransactionInquiryButton>
-          <HeadBold20 color="blackSalon0" onClick={() => console.log('거래문의 페이지로 이동')}>
+          <HeadBold20 color="black0" onClick={() => console.log('거래문의 페이지로 이동')}>
             거래문의
           </HeadBold20>
         </TransactionInquiryButton>
@@ -132,12 +130,12 @@ const SalesPrice = styled(Flex)`
   justify-content: center;
   align-items: center;
   height: 100%;
-  background: ${(props) => props.theme.color.blackSalon50};
+  background: ${(props) => props.theme.color.black50};
 `;
 
 const TransactionInquiryButton = styled(SalesPrice)`
   flex: 3;
-  background: ${(props) => props.theme.color.redSalon500};
+  background: ${(props) => props.theme.color.red500};
 `;
 
 const LowestPriceBox = styled(Flex)`
