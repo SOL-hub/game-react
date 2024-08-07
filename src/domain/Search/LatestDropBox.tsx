@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Flex } from 'components/common/Layout';
+import { Flex } from 'components/atom/Layout';
 import { TextWithIcon } from 'components/molecules/TextWithIcon';
-import { ICON_TYPE } from 'components/common/Icon';
+import { ICON_TYPE } from 'components/atom/Icon';
 
 const LatestDropBox = () => {
   const [isShow, setIsShow] = useState(false);

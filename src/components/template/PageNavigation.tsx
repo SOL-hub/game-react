@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import { Flex } from 'components/common/Layout';
-import { Icon, ICON_TYPE } from 'components/common/Icon';
-import { CaptionRegular12 } from 'components/common/Typo';
+import { Flex } from 'components/atom/Layout';
+import { Icon, ICON_TYPE } from 'components/atom/Icon';
+import { CaptionRegular12 } from 'components/atom/Typo';
 
 const PAGE_DIVISOR = 5;
 const INCREASE = 'increase';

@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Card, Flex } from '../../components/common/Layout';
+import { Card, Flex } from '../../components/atom/Layout';
 import {
   TitleWithRedBedge,
   GreyTitleWithContents,
 } from '../../components/template/TitleAndContents';
 
-import { BedgeHashtag } from '../../components/common/Bedge';
+import { BedgeHashtag } from '../../components/atom/Bedge';
 
-import { BodyRegular16 } from '../../components/common/Typo';
-import { MediumButton } from '../../components/common/Button';
+import { BodyRegular16 } from '../../components/atom/Typo';
+import { MediumButton } from '../../components/atom/Button';
 
 interface salesCardProps {
   data?: any;

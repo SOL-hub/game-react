@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { Flex } from 'components/common/Layout';
-import { CaptionRegular12 } from 'components/common/Typo';
+import { Flex } from 'components/atom/Layout';
+import { CaptionRegular12 } from 'components/atom/Typo';
 
 interface ToolTipProps {
   text?: string;

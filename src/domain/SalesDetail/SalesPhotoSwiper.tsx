@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
-import { Flex } from 'components/common/Layout';
+import { Flex } from 'components/atom/Layout';
 
 interface swiperProps {
   data: any;

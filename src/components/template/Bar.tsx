@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex } from './Layout';
-import { Icon, ICON_TYPE } from './Icon';
-import { TextBold16 } from './Typo';
+import { Flex } from '../atom/Layout';
+import { Icon, ICON_TYPE } from '../atom/Icon';
+import { TextBold16 } from '../atom/Typo';
 
 type BarProps = {
   title?: string;

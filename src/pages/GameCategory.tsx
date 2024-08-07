@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { DefaultLayout, Layout } from 'components/common/Layout';
-import { BarBackWithTitle } from 'components/common/Bar';
+import { DefaultLayout, Layout } from 'components/atom/Layout';
+import { BarBackWithTitle } from 'components/template/Bar';
 import GameCategoryCard from 'domain/GameCategory/GameCategoryCard';
 import * as api from 'utils/api';
 

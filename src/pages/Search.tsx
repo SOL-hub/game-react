@@ -1,5 +1,5 @@
 import React from 'react';
-import { DefaultLayout } from 'components/common/Layout';
+import { DefaultLayout } from 'components/atom/Layout';
 import SearchBanner from 'domain/Search/SearchBanner';
 import SalesList from 'domain/Search/SalesList';
 import BottomNavigation from 'components/template/BottomNavigation';

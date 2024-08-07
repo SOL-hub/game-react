@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex } from '../../components/common/Layout';
-import { RedBedge } from '../../components/common/Bedge';
-import { TextBold16, TextRegular16 } from '../../components/common/Typo';
+import { Flex } from '../atom/Layout';
+import { RedBedge } from '../atom/Bedge';
+import { TextBold16, TextRegular16 } from '../atom/Typo';
 
 type componentsProps = {
   margin?: string;

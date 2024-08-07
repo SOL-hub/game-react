@@ -1,18 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import { DefaultLayout, Layout, Flex, GrayBox, BottomBox } from '../components/common/Layout';
-import { BarBackWithFavorites } from '../components/common/Bar';
+import { DefaultLayout, Layout, Flex, GrayBox, BottomBox } from '../components/atom/Layout';
+import { BarBackWithFavorites } from '../components/template/Bar';
 import {
   HeadBold20,
   HeadBold18,
   TextRegular16,
   TextBold14,
   CaptionRegular12,
-} from '../components/common/Typo';
+} from '../components/atom/Typo';
 
-import { Icon, ICON_TYPE } from '../components/common/Icon';
+import { Icon, ICON_TYPE } from '../components/atom/Icon';
 
-import { Bedge } from '../components/common/Bedge';
+import { Bedge } from '../components/atom/Bedge';
 
 import SalesPhotoSwiper from '../domain/SalesDetail/SalesPhotoSwiper';
 import Profile from '../components/template/Profile';

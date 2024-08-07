@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex } from './Layout';
 import { TextRegular14 } from './Typo';
+import { Flex } from './Layout';
 
 interface ChipProps {
   margin?: string;

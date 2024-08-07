@@ -1,7 +1,7 @@
 import React from 'react';
-import { Flex } from 'components/common/Layout';
-import { TextRegular14 } from 'components/common/Typo';
-import { Icon } from 'components/common/Icon';
+import { Flex } from 'components/atom/Layout';
+import { TextRegular14 } from 'components/atom/Typo';
+import { Icon } from 'components/atom/Icon';
 
 export const TextWithIcon = ({ text, iconData, onClick }) => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { TextWithIcon } from 'components/molecules/TextWithIcon';
-import { ICON_TYPE } from 'components/common/Icon';
+import { ICON_TYPE } from 'components/atom/Icon';
 
 const SearchFilter = () => {
   return (

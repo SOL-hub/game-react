@@ -1,7 +1,7 @@
 import React from 'react';
-import { HeadRegular18, BodyRegular15 } from 'components/common/Typo';
-import { Icon, ICON_TYPE } from 'components/common/Icon';
-import { Card, Flex } from 'components/common/Layout';
+import { HeadRegular18, BodyRegular15 } from 'components/atom/Typo';
+import { Icon, ICON_TYPE } from 'components/atom/Icon';
+import { Card, Flex } from 'components/atom/Layout';
 
 const GameCategoryCard = ({
   representCategoryName,

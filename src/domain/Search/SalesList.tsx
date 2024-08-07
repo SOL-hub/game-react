@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import { Flex, GrayBox } from 'components/common/Layout';
+import { Flex, GrayBox } from 'components/atom/Layout';
 import {
   HeadBold20,
   HeadRegular18,
   CaptionBold12,
   TextRegular14,
   CaptionRegular12,
-} from 'components/common/Typo';
-import { BedgeBox } from 'components/common/Bedge';
-import { Icon, ICON_TYPE } from 'components/common/Icon';
+} from 'components/atom/Typo';
+import { BedgeBox } from 'components/atom/Bedge';
+import { Icon, ICON_TYPE } from 'components/atom/Icon';
 import * as PATH from '../../utils/path';
 import { salesListDisplayTime } from 'utils/formatDate';
 

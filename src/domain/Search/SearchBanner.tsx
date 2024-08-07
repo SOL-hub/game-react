@@ -1,6 +1,6 @@
 import React from 'react';
-import { Flex } from 'components/common/Layout';
-import { Divider2 } from 'components/common/Divider';
+import { Flex } from 'components/atom/Layout';
+import { Divider2 } from 'components/atom/Divider';
 import banner from 'assets/image/boardSalon_banner.png';
 
 const SearchBanner = () => {

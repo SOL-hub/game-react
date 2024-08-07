@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Card, Flex, BottomBox } from 'components/common/Layout';
-import { Icon, ICON_TYPE } from 'components/common/Icon';
-import { CaptionRegular12 } from 'components/common/Typo';
+import { Card, Flex, BottomBox } from 'components/atom/Layout';
+import { Icon, ICON_TYPE } from 'components/atom/Icon';
+import { CaptionRegular12 } from 'components/atom/Typo';
 import * as PATH from 'utils/path';
 
 const BootmNavigation = ({ current = GAME_SEARCH }) => {

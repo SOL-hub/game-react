@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Flex } from 'components/common/Layout';
-import { Icon, ICON_TYPE } from 'components/common/Icon';
+import { Flex } from 'components/atom/Layout';
+import { Icon, ICON_TYPE } from 'components/atom/Icon';
 import { CaptionRegular12 } from './Typo';
 
 interface InputProps {

@@ -1,6 +1,6 @@
 import React from 'react';
-import { DefaultLayout, Flex } from 'components/common/Layout';
-import { BarCancel } from 'components/common/Bar';
+import { DefaultLayout, Flex } from 'components/atom/Layout';
+import { BarCancel } from 'components/template/Bar';
 import KakaoLoginButtonImage from 'assets/image/kakao_login_large_wide.png';
 import { ToolTip } from 'components/molecules/ToolTip';
 

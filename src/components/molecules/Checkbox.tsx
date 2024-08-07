@@ -1,8 +1,8 @@
 import React from 'react';
-import { Flex } from 'components/common/Layout';
-import { InputCheckbox } from 'components/common/InputCheckbox';
+import { Flex } from 'components/atom/Layout';
+import { InputCheckbox } from 'components/atom/InputCheckbox';
 import { color } from 'styles/ThemeStyle';
-import { Text } from 'components/common/Typo';
+import { Text } from 'components/atom/Typo';
 
 interface CheckboxProps {
   id?: string;

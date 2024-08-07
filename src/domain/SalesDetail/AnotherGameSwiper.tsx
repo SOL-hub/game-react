@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
-import { Flex } from '../../components/common/Layout';
-import { TextBold16 } from '../../components/common/Typo';
+import { Flex } from '../../components/atom/Layout';
+import { TextBold16 } from '../../components/atom/Typo';
 
 interface dataProps {
   data: any;

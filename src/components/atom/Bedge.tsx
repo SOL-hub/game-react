@@ -1,7 +1,7 @@
 import React, { Children } from 'react';
 import styled from 'styled-components';
 import { Flex } from './Layout';
-import { TextRegular14, TextRegular16, TextBold16, CaptionRegular12 } from './Typo';
+import { CaptionRegular12, TextBold16, TextRegular16 } from './Typo';
 
 export const BedgeBox = styled(Flex)`
   justify-content: center;

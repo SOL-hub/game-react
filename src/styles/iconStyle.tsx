@@ -1,4 +1,4 @@
-import { IconProps } from '../components/common/Icon';
+import { IconProps } from '../components/atom/Icon';
 import { color as themeColor } from '../styles/ThemeStyle';
 
 export type ICON_NAME_TYPE = (typeof ICON_NAME)[keyof typeof ICON_NAME];

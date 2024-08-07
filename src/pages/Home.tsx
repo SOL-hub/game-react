@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import { DefaultLayout, Layout, Flex } from '../components/common/Layout';
-import { LargeButton, MediumButton, SmallButton } from '../components/common/Button';
-import { HeaderWithTitle } from '../components/common/Bar';
-import { Icon, ICON_TYPE } from '../components/common/Icon';
+import { DefaultLayout, Layout, Flex } from '../components/atom/Layout';
+import { LargeButton, MediumButton, SmallButton } from '../components/atom/Button';
+import { HeaderWithTitle } from '../components/template/Bar';
+import { Icon, ICON_TYPE } from '../components/atom/Icon';
 import { css } from '@emotion/react';
 import BSText from '../components/common/BSText';
 import BSButton from '../components/common/BSButton';
@@ -11,15 +11,9 @@ import BSTextField from '../components/common/BSTextField';
 import BSTop from '../components/common/BSTop';
 import { getCards } from '../remote/card';
 import { useEffect } from 'react';
-import { Bedge, BedgeCertification, BedgeHashtag } from '../components/common/Bedge';
+import { Bedge, BedgeCertification, BedgeHashtag } from '../components/atom/Bedge';
 import { GreyTitleWithContents, TitleWithRedBedge } from '../components/template/TitleAndContents';
-import {
-  Input,
-  DefaultInput,
-  IconInput,
-  INPUT_MODE,
-  INPUT_ICON_TYPE,
-} from 'components/common/Input';
+import { Input, DefaultInput, IconInput, INPUT_MODE, INPUT_ICON_TYPE } from 'components/atom/Input';
 import * as PATH from 'utils/path';
 
 const containerStyles = css`
