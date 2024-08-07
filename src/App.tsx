@@ -8,6 +8,7 @@ import SalesDetail from 'pages/SalesDetail';
 import GameCategory from 'pages/GameCategory';
 import Search from 'pages/Search';
 import Login from 'pages/Login';
+import GameRegistration from 'pages/GameRagistration';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path={PATH.SALES_INTRO} element={<Search />} />
         <Route path={`${PATH.SALES_DETAIL}/:salesId`} element={<SalesDetail />} />
         <Route path={PATH.LOGIN} element={<Login />} />
+        <Route path={PATH.GAME_REGISTRATION} element={<GameRegistration />} />
         <Route path="*" element={<Navigate to={PATH.SEARCH} />} />
       </Routes>
     </div>

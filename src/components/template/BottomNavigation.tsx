@@ -54,7 +54,7 @@ export const MYPAGE = 'mypage';
 
 const NAVI_DATA = [
   [GAME_SEARCH, ICON_TYPE.search, '검색하기', PATH.SEARCH],
-  [GAME_SALES, ICON_TYPE.plus, '게임판매', PATH.SALES_REGISTRATION],
+  [GAME_SALES, ICON_TYPE.plus, '게임판매', PATH.GAME_REGISTRATION],
   // [MYPAGE, ICON_TYPE.player, '마이홈', PATH.MYPAGE],
   [MYPAGE, ICON_TYPE.player, '마이홈', PATH.LOGIN],
 ].map((item) => ({ id: item[0], icon: item[1], text: item[2], path: item[3] }));
