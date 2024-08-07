@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { Flex } from 'components/atom/Layout';
 import { Icon, ICON_TYPE } from 'components/atom/Icon';
-import { CaptionRegular12 } from 'components/atom/Typo';
+import { CaptionRegular12, Text } from 'components/atom/Typo';
 
 const PAGE_DIVISOR = 5;
 const INCREASE = 'increase';
@@ -62,6 +62,34 @@ export const PageControlNumber = ({ totalPages, currentPage, setCurrentPage }: P
         color={doSetIconColor(totalPages)}
         onClick={() => !isOnePage && doChangePageNum(INCREASE)}
       />
+    </Flex>
+  );
+};
+
+interface PageBadgeProps {
+  current: number;
+  total: number;
+  color?: 'color' | 'gray';
+}
+
+export const PageControlBadge = ({ current, total, color = 'color' }: PageBadgeProps) => {
+  const isColor = color === 'color';
+
+  return (
+    <Flex
+      padding="0.25rem 0.5rem"
+      background={isColor ? 'red100' : 'black600'}
+      borderRadius="0.5rem"
+      style={{ opacity: isColor ? 1 : 0.5 }}
+    >
+      <Text
+        size={14}
+        bold={isColor ? true : false}
+        margin="2px 0 0"
+        color={isColor ? 'red300' : 'black0'}
+      >
+        {current} / {total}
+      </Text>
     </Flex>
   );
 };
