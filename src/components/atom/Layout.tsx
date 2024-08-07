@@ -88,7 +88,7 @@ export const BottomBox = styled(Flex)`
   position: fixed;
   bottom: 0;
   width: 100%;
-  max-width: 26.75rem;
+  max-width: ${({ theme }) => theme.mediaSize.breakPoint};
   height: ${(props) => props.height || '4.5rem'};
   z-index: ${(props) => props.zIndex || 10};
 `;
