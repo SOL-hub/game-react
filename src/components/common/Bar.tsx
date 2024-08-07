@@ -87,6 +87,21 @@ export const BarBackWithComponent = ({ colorBack = 'black600', padding, children
   );
 };
 
+export const BarCancel = ({ title = '', colorTitle = 'black500' }: BarProps) => {
+  return (
+    <Header>
+      <Flex alignItems="center" padding="1.125rem 1.5rem">
+        {title.length > 0 && <TextBold16 color={colorTitle}>{title}</TextBold16>}
+        <Icon
+          iconName={ICON_TYPE.close}
+          onClick={() => window.history.back()}
+          margin="0 0 0 auto"
+        />
+      </Flex>
+    </Header>
+  );
+};
+
 export const Header = styled.header`
   width: 100%;
   height: 3.75rem; //60px

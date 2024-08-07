@@ -7,6 +7,7 @@ import CategoryExplain from './pages/CategoryExplain';
 import SalesDetail from 'pages/SalesDetail';
 import GameCategory from 'pages/GameCategory';
 import Search from 'pages/Search';
+import Login from 'pages/Login';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path={PATH.GAME_CATEGORY} element={<GameCategory />} />
         <Route path={PATH.SALES_INTRO} element={<Search />} />
         <Route path={`${PATH.SALES_DETAIL}/:salesId`} element={<SalesDetail />} />
+        <Route path={PATH.LOGIN} element={<Login />} />
         <Route path="*" element={<Navigate to={PATH.SEARCH} />} />
       </Routes>
     </div>

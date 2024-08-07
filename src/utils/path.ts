@@ -7,3 +7,4 @@ export const GAME_CATEGORY = '/game-category';
 export const SALES_INTRO = '/search';
 export const SALES_REGISTRATION = '/sales/registration';
 export const MYPAGE = '/mypage';
+export const LOGIN = '/login';
