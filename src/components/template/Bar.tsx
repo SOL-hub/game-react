@@ -5,6 +5,7 @@ import { Icon, ICON_TYPE } from '../atom/Icon';
 import { TextBold16 } from '../atom/Typo';
 
 type BarProps = {
+  isFixed?: boolean;
   title?: string;
   icon?: string;
   children?: React.ReactNode;
@@ -27,21 +28,26 @@ export const HeaderWithTitle = ({ title }: BarProps) => {
 };
 
 export const BarBackWithTitle = ({
+  isFixed = false,
   colorBack = 'red500',
   colorTitle = 'black500',
   title,
+  children,
 }: BarProps) => {
   return (
-    <Header>
-      <Flex alignItems="center" padding="1.125rem 1rem">
-        <Icon
-          iconName={ICON_TYPE.arrowV1Left}
-          color={colorBack}
-          onClick={() => window.history.back()}
-        />
-        <TextBold16 margin="3px 0 0 1rem" color={colorTitle}>
-          {title}
-        </TextBold16>
+    <Header isFixed={isFixed}>
+      <Flex justifyContent="space-between" alignItems="center" padding="1.125rem  1rem">
+        <Flex alignItems="center">
+          <Icon
+            iconName={ICON_TYPE.arrowV1Left}
+            color={colorBack}
+            onClick={() => window.history.back()}
+          />
+          <TextBold16 margin="3px 0 0 1rem" color={colorTitle}>
+            {title}
+          </TextBold16>
+        </Flex>
+        {children}
       </Flex>
     </Header>
   );
@@ -102,8 +108,11 @@ export const BarCancel = ({ title = '', colorTitle = 'black500' }: BarProps) => 
   );
 };
 
-export const Header = styled.header`
+export const Header = styled.header<BarProps>`
+  position: ${({ isFixed }) => (isFixed ? 'fixed' : 'static')};
+  top: 0;
   width: 100%;
+  max-width: ${({ theme }) => theme.mediaSize.breakPoint};
   height: 3.75rem; //60px
   background: ${(props) => props.theme.color.black0};
 `;

@@ -26,7 +26,7 @@ interface LayoutStyle {
 
 export const DefaultLayout = styled.section<LayoutStyle>`
   width: 100%;
-  max-width: 26.75rem; /* 428px */
+  max-width: ${({ theme }) => theme.mediaSize.breakPoint};
   min-height: 100vh;
   padding: ${(props) => props.padding || '0 0 5rem'};
   margin: 0 auto;

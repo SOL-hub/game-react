@@ -2,6 +2,7 @@ const mediaSize = {
   Desktop: '(max-width: 1024px)',
   Tablet: '(max-width: 768px)',
   Mobile: '(max-width: 414px)',
+  breakPoint: '26.75rem',
 };
 
 export const color = {
