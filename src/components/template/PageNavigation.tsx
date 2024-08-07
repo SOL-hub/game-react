@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { Flex } from 'components/common/Layout';
 import { Icon, ICON_TYPE } from 'components/common/Icon';
@@ -23,7 +23,10 @@ export const PageControlNumber = ({ totalPages, currentPage, setCurrentPage }: P
     return currentPage === condition ? 'black300' : 'red500';
   };
 
-  const pages = Array.from({ length: totalPages }, (v, i) => i).map((num) => num + 1);
+  const pages = useMemo(
+    () => Array.from({ length: totalPages }, (v, i) => i).map((num) => num + 1),
+    [totalPages],
+  );
   const start =
     Math.floor((currentPage + (currentPage % PAGE_DIVISOR === 0 ? -1 : 0)) / PAGE_DIVISOR) *
     PAGE_DIVISOR;
@@ -31,6 +34,7 @@ export const PageControlNumber = ({ totalPages, currentPage, setCurrentPage }: P
     totalPages <= PAGE_DIVISOR ? pages : pages.slice(start, start + PAGE_DIVISOR);
 
   const doChangePageNum = (type: string) => {
+    if (isOnePage) return;
     if (type === DECREASE && currentPage > 1) setCurrentPage(currentPage - 1);
     if (type === INCREASE && currentPage < totalPages) setCurrentPage(currentPage + 1);
   };
@@ -40,14 +44,14 @@ export const PageControlNumber = ({ totalPages, currentPage, setCurrentPage }: P
       <Icon
         iconName={ICON_TYPE.arrowV1Left}
         color={doSetIconColor(1)}
-        onClick={() => !isOnePage && doChangePageNum(DECREASE)}
+        onClick={() => doChangePageNum(DECREASE)}
       />
       <Flex>
         {displayPages.map((item, idx) => (
           <PageNum
             key={idx}
             color={item === currentPage && !isOnePage ? 'red500' : 'black400'}
-            onClick={() => setCurrentPage(item)}
+            onClick={() => doChangePageNum(INCREASE)}
           >
             {item}
           </PageNum>
