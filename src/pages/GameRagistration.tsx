@@ -4,6 +4,8 @@ import { DefaultLayout, Layout, BottomBox, GrayBox } from 'components/atom/Layou
 import { TextRegular14 } from 'components/atom/Typo';
 import RegistrationButton from 'domain/GameRegistration/RegistrationButton';
 import ImageUploader from 'domain/GameRegistration/ImageUploader';
+import RegistrationInfoInput from 'domain/GameRegistration/RegistrationInfoInput';
+import { DefaultTextarea } from 'components/atom/Textarea';
 
 const GameRegistration = () => {
   /** css 테스트값 */
@@ -27,6 +29,18 @@ const GameRegistration = () => {
         <ImageUploader />
       </Layout>
       <GrayBox height="1px" background={100} />
+      <Layout padding="2rem 1.5rem 5rem">
+        <RegistrationInfoInput
+          title="상품명"
+          inputData={{ placeholder: '상품명을 입력해주세요' }}
+        />
+        <RegistrationInfoInput title="게임 소개" inputData={{ placeholder: '게시글 제목' }}>
+          <DefaultTextarea
+            style={{ margin: '1rem 0 0' }}
+            placeholder="게임판매 게시글 내용을 작성해주세요.&#13;&#10;친절한 게임 설명은 판매에 도움이 됩니다."
+          />
+        </RegistrationInfoInput>
+      </Layout>
       <BottomBox>
         <RegistrationButton registrationProgress={registrationProgress} isCompleted={isCompleted} />
       </BottomBox>
