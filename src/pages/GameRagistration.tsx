@@ -1,7 +1,7 @@
 import React from 'react';
 import { BarBackWithTitle } from 'components/template/Bar';
 import { useNavigate } from 'react-router-dom';
-import { DefaultLayout, Layout, BottomBox, GrayBox, Grid, Flex } from 'components/atom/Layout';
+import { DefaultLayout, Layout, BottomBox, GrayBox, Grid } from 'components/atom/Layout';
 import { TextRegular14 } from 'components/atom/Typo';
 import RegistrationButton from 'domain/GameRegistration/RegistrationButton';
 import ImageUploader from 'domain/GameRegistration/ImageUploader';
@@ -11,6 +11,7 @@ import RegistrationInfo from 'domain/GameRegistration/RegistrationInfo';
 import { OutlineChip } from 'components/atom/Chip';
 import * as PATH from 'utils/path';
 import { DefaultInput, INPUT_MODE } from 'components/atom/Input';
+import { INPUT_TYPE, InputSelection } from 'components/molecules/InputSelection';
 
 const GameRegistration = () => {
   const navigate = useNavigate();
@@ -64,6 +65,7 @@ const GameRegistration = () => {
             ))}
           </Grid>
         </RegistrationInfo>
+
         <RegistrationInfo title="필요인원">
           <Grid gap="0 0.5rem" columns="repeat(2, 1fr)">
             {[['최소인원'], ['최대인원']]
@@ -77,6 +79,25 @@ const GameRegistration = () => {
                 />
               ))}
           </Grid>
+        </RegistrationInfo>
+        <RegistrationInfo title="게임 플레이 시간은 어떤가요?">
+          {[
+            ['LESS_THAN_15_MIN', '15분 미만'],
+            ['MORE_THAN_15_MIN_LESS_THAN_30_MIN', '15 ~ 30분'],
+            ['MORE_THAN_30_MIN_LESS_THAN_60_MIN', '30 ~ 1시간'],
+            ['MORE_THAN_1_HOUR', '1시간 이상'],
+          ]
+            .map((item) => ({ id: item[0], label: item[1] }))
+            .map((item, idx) => (
+              <InputSelection
+                key={idx}
+                inputType={INPUT_TYPE.radio}
+                id={item.id}
+                name="playingTime"
+                label={item.label}
+                margin={idx === 3 ? '0' : '0 0 1rem'} // 임시
+              />
+            ))}
         </RegistrationInfo>
       </Layout>
       <BottomBox>

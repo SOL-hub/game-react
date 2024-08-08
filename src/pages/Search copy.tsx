@@ -11,7 +11,7 @@ import { TextChip } from 'components/atom/Chip';
 import { Divider2 } from 'components/atom/Divider';
 import SearchFilter from 'domain/Search/SearchFilter';
 import LatestDropBox from 'domain/Search/LatestDropBox';
-import { Checkbox } from 'components/molecules/Checkbox';
+import { Checkbox } from 'components/molecules/InputSelection';
 import useCheckbox from 'components/common/useCheckbox';
 import SalesList from 'domain/Search/SalesList';
 import BottomNavigation from 'components/template/BottomNavigation';
