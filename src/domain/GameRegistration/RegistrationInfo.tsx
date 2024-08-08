@@ -17,7 +17,11 @@ const RegistrationInfo = ({
       <Flex justifyContent="space-between" alignItems="center" margin="0 0 1.5rem">
         <TextBold16>{title}</TextBold16>
         {grayButton.buttonText && (
-          <TextRegular14 color="black300" onClick={grayButton.onClick}>
+          <TextRegular14
+            color="black300"
+            onClick={grayButton.onClick}
+            style={{ cursor: 'pointer' }}
+          >
             {grayButton.buttonText}
           </TextRegular14>
         )}
