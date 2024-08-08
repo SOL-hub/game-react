@@ -11,10 +11,10 @@ import { TextChip } from 'components/atom/Chip';
 import { Divider2 } from 'components/atom/Divider';
 import SearchFilter from 'domain/Search/SearchFilter';
 import LatestDropBox from 'domain/Search/LatestDropBox';
-import { Checkbox } from 'components/molecules/InputSelection';
-import useCheckbox from 'components/common/useCheckbox';
 import SalesList from 'domain/Search/SalesList';
 import BottomNavigation from 'components/template/BottomNavigation';
+import useInputSelection from 'components/common/useInputSelection';
+import { INPUT_TYPE, InputSelection } from 'components/molecules/InputSelection';
 
 const Search = () => {
   const {
@@ -27,7 +27,7 @@ const Search = () => {
     relatedSearches,
   } = useSearch();
 
-  const { checkboxValue, onChangeCheckbox } = useCheckbox(false);
+  const { checkboxValue, onChangeCheckbox } = useInputSelection(false);
 
   console.log(recentSearches.slice(0, 3));
 
@@ -122,7 +122,8 @@ const Search = () => {
           <Flex padding="0.625rem 1.5rem">
             <LatestDropBox />
             <SearchFilter />
-            <Checkbox
+            <InputSelection
+              inputType={INPUT_TYPE.checkbox}
               id="new"
               label="새 제품만 보기"
               margin="0 0 0 auto"

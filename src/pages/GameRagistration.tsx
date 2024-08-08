@@ -20,6 +20,14 @@ const GameRegistration = () => {
   const isWriting = registrationProgress > 0;
   const isCompleted = registrationProgress > 11;
 
+  /** 로직 테스트 */
+  const { radioValue, onChangeRadio, radioChecked } = useInputSelection({
+    LESS_THAN_15_MIN: false,
+    MORE_THAN_15_MIN_LESS_THAN_30_MIN: false,
+    MORE_THAN_30_MIN_LESS_THAN_60_MIN: false,
+    MORE_THAN_1_HOUR: false,
+  });
+
   return (
     <DefaultLayout>
       <BarBackWithTitle isFixed={true} title="보드게임 판매하기">
@@ -96,6 +104,8 @@ const GameRegistration = () => {
                 name="playingTime"
                 label={item.label}
                 margin={idx === 3 ? '0' : '0 0 1rem'} // 임시
+                checked={item.id === radioValue ? radioChecked : false}
+                onChange={(e) => onChangeRadio(e)}
               />
             ))}
         </RegistrationInfo>
