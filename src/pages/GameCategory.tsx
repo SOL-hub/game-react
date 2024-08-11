@@ -5,14 +5,20 @@ import GameCategoryCard from 'domain/GameCategory/GameCategoryCard';
 import * as api from 'utils/api';
 
 const GameCategory = () => {
-  const [categoryData, setCategoryData] = useState(GAME_CATEGORY_DATA);
+  // const [categoryData, setCategoryData] = useState(GAME_CATEGORY_DATA);
+  const [categoryData, setCategoryData] = useState<any[]>([]);
   const [currentName, setCurrentName] = useState('');
 
   useEffect(() => {
-    // api
-    //   .getRepresentCategoryApi()
-    //   .then((response) => setCategoryData(response.data))
-    //   .catch((error) => console.log(error));
+    api
+      .getRepresentCategoryApi()
+      .then((response) => setCategoryData(response.data))
+      //   .catch((error) => console.log(error));
+      .catch(() => setCategoryData(GAME_CATEGORY_DATA));
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
   return (
